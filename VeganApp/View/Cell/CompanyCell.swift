@@ -2,6 +2,8 @@ import UIKit
 
 class CompanyCell: UITableViewCell {
   
-  static let cellIdentifier = "\(self)"
+  static var cellIdentifier: String {
+    return "\(self)"
+  }
   
 }
