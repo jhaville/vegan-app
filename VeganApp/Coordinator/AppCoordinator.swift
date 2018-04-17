@@ -18,7 +18,7 @@ final class AppCoordinator: Coordinator {
   }
   
   private func showTabs() {
-    let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TabBarController") as! UITabBarController
+    let tabBarController = UITabBarController()
     window.rootViewController = tabBarController
     
     let tabBarCoordinator = TabBarCoordinator(tabBarController: tabBarController)

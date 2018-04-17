@@ -1,15 +1,15 @@
 import Foundation
 
-struct Company {
+struct Item {
   let name: String
   let location: String
   let coordinates: Coordinates
   let imageUrls: [URL]
   let websiteUrl: URL
-  let companyType: CompanyType
+  let itemType: ItemType
 }
 
-enum CompanyType {
+enum ItemType {
   case restaurant
   case shop
 }

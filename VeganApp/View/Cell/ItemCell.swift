@@ -1,6 +1,6 @@
 import UIKit
 
-class CompanyCell: UITableViewCell {
+class ItemCell: UITableViewCell {
   
   static var cellIdentifier: String {
     return "\(self)"
