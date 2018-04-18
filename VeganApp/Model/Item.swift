@@ -4,8 +4,8 @@ struct Item {
   let name: String
   let location: String
   let coordinates: Coordinates
-  let imageUrls: [URL]
-  let websiteUrl: URL
+  let imageUrls: [URL]?
+  let websiteUrl: URL?
   let itemType: ItemType
 }
 

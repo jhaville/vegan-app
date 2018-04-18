@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FBEE3B122085362F00906358 /* LoadingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B112085362F00906358 /* LoadingOverlay.swift */; };
 		FBEEBA232083D089008849C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEEBA222083D089008849C6 /* AppDelegate.swift */; };
 		FBEEBA282083D089008849C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEEBA262083D089008849C6 /* Main.storyboard */; };
 		FBEEBA2A2083D089008849C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEEBA292083D089008849C6 /* Assets.xcassets */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FBEE3B112085362F00906358 /* LoadingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlay.swift; sourceTree = "<group>"; };
 		FBEEBA1F2083D089008849C6 /* VeganApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeganApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEEBA222083D089008849C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBEEBA272083D089008849C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -49,6 +47,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FBEE3B132087FE8B00906358 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		FBEEBA162083D088008849C6 = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +73,7 @@
 		FBEEBA212083D089008849C6 /* VeganApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBEE3B132087FE8B00906358 /* Networking */,
 				FBEEBA412083E2DD008849C6 /* View */,
 				FBEEBA3E2083E1C0008849C6 /* Controller */,
 				FBEEBA372083DC43008849C6 /* Coordinator */,
@@ -111,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				FBEEBA422083E2E2008849C6 /* Cell */,
-				FBEE3B112085362F00906358 /* LoadingOverlay.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,7 +210,6 @@
 				FBEEBA3B2083DF10008849C6 /* TabBarCoordinator.swift in Sources */,
 				FBEEBA3D2083E152008849C6 /* ItemCoordinator.swift in Sources */,
 				FBEEBA362083DB62008849C6 /* Item.swift in Sources */,
-				FBEE3B122085362F00906358 /* LoadingOverlay.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +346,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8ECNKLXCF;
 				INFOPLIST_FILE = VeganApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenlabs.VeganApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -357,12 +363,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = D8ECNKLXCF;
 				INFOPLIST_FILE = VeganApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenlabs.VeganApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

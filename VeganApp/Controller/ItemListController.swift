@@ -14,9 +14,13 @@ protocol Stateful {
 }
 
 class ItemListController: UIViewController, Stateful {
-  
-  let loadingOverlay = LoadingOverlay()
+
   var listItemType: ItemListType?
+  var items = [Item]() {
+    didSet {
+      tableView.reloadData()
+    }
+  }
     
   @IBOutlet weak var tableView: UITableView! {
     didSet {
@@ -25,6 +29,7 @@ class ItemListController: UIViewController, Stateful {
       tableView.estimatedRowHeight = 66.0
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.separatorStyle = .none
+      tableView.allowsSelection = false
     }
   }
   
@@ -48,15 +53,13 @@ class ItemListController: UIViewController, Stateful {
   }
   
   func showLoadingState() {
-    loadingOverlay.show()
+    tableView.setLoading()
   }
   
-  func showErrorState() {
-    
-  }
+  func showErrorState() { }
   
   func showDefaultState() {
-    loadingOverlay.hide()
+    tableView.stopLoading()
   }
   
 }
@@ -68,11 +71,23 @@ extension ItemListController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 4
+    return items.count
   }
-  
 }
 
 
-
+extension UITableView {
+  func setLoading() {
+    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    activityIndicatorView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+    addSubview(activityIndicatorView)
+    activityIndicatorView.center = center
+    activityIndicatorView.startAnimating()
+  }
+  
+  func stopLoading() {
+    let activityIndicatorView = subviews.filter { $0 is UIActivityIndicatorView }.first
+    activityIndicatorView?.removeFromSuperview()
+  }
+}
 
