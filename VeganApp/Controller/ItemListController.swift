@@ -66,7 +66,10 @@ class ItemListController: UIViewController, Stateful {
 
 extension ItemListController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let itemCell = tableView.dequeueReusableCell(withIdentifier: ItemCell.cellIdentifier, for: indexPath)
+    let itemCell = tableView.dequeueReusableCell(withIdentifier: ItemCell.cellIdentifier, for: indexPath) as! ItemCell
+    itemCell.nameLabel.text = items[indexPath.row].name
+    itemCell.locationLabel.text = items[indexPath.row].location
+
     return itemCell
   }
   

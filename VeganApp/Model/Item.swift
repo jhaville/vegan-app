@@ -12,6 +12,15 @@ struct Item {
 enum ItemType {
   case restaurant
   case shop
+  
+  func toCollectionName() -> String {
+    switch self {
+    case .restaurant:
+      return "restaurants"
+    case .shop:
+      return "shop"
+    }
+  }
 }
 
 struct Coordinates {
