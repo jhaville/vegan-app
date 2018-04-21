@@ -1,27 +1,18 @@
 import UIKit
 
-enum ViewControllerState {
+enum ViewState<A> {
   case loading
-  case error
-  case `default`
+  case error(Error?)
+  case data(A)
 }
 
-protocol Stateful {
-  func setState(to state: ViewControllerState)
-  func showLoadingState()
-  func showErrorState()
-  func showDefaultState()
-}
+class ItemListController: UIViewController {
 
-class ItemListController: UIViewController, Stateful {
-
-  var listItemType: ItemListType?
-  var items = [Item]() {
-    didSet {
-      tableView.reloadData()
-    }
-  }
+  var itemType: ItemType?
+  private var itemViewModels = [ItemViewModel]()
     
+  @IBOutlet weak var errorView: UIView!
+  @IBOutlet weak var errorViewLabel: UILabel!
   @IBOutlet weak var tableView: UITableView! {
     didSet {
       tableView.dataSource = self
@@ -41,56 +32,54 @@ class ItemListController: UIViewController, Stateful {
     super.viewWillAppear(animated)
   }
   
-  func setState(to state: ViewControllerState) {
-    switch state {
+  func update(with viewState: ViewState<ItemsViewModel>) {
+    resetState()
+    switch viewState {
     case .loading:
       showLoadingState()
-    case .error:
-      showErrorState()
-    case .default:
-      showDefaultState()
+    case .error(let error):
+      showErrorState(with: error)
+    case .data(let itemsViewModel):
+      if itemsViewModel.itemViewModels.isEmpty { showErrorState(with: nil, isEmpty: true) } else { update(with: itemsViewModel) }
     }
+  }
+  
+  private func resetState() {
+    errorView.isHidden = true
+    tableView.stopLoading()
+  }
+  
+  func update(with viewModel: ItemsViewModel) {
+    itemViewModels = viewModel.itemViewModels
+    tableView.reloadData()
   }
   
   func showLoadingState() {
     tableView.setLoading()
   }
   
-  func showErrorState() { }
-  
-  func showDefaultState() {
-    tableView.stopLoading()
+  func showErrorState(with error: Error?, isEmpty: Bool = false) {
+    errorView.isHidden = false
+    if let error = error {
+      errorViewLabel.text = error.localizedDescription
+    } else if isEmpty {
+      showEmptyState()
+    }
   }
   
+  func showEmptyState() {
+    errorViewLabel.text = "There are currently no \((itemType ?? .restaurant).toCollectionName()) near you, please check back later"
+  }
 }
 
 extension ItemListController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let itemCell = tableView.dequeueReusableCell(withIdentifier: ItemCell.cellIdentifier, for: indexPath) as! ItemCell
-    itemCell.nameLabel.text = items[indexPath.row].name
-    itemCell.locationLabel.text = items[indexPath.row].location
-
+    itemCell.update(with: itemViewModels[indexPath.row])
     return itemCell
   }
   
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return items.count
+    return itemViewModels.count
   }
 }
-
-
-extension UITableView {
-  func setLoading() {
-    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    activityIndicatorView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-    addSubview(activityIndicatorView)
-    activityIndicatorView.center = center
-    activityIndicatorView.startAnimating()
-  }
-  
-  func stopLoading() {
-    let activityIndicatorView = subviews.filter { $0 is UIActivityIndicatorView }.first
-    activityIndicatorView?.removeFromSuperview()
-  }
-}
-

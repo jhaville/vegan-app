@@ -14,8 +14,8 @@ final class TabBarCoordinator: NSObject, Coordinator {
   private var firstShopsLoad = true
   
   init(tabBarController: UITabBarController) {
-    restaurantsCoordinator = ItemCoordinator(navigationController: restaurantsNavigationController, itemListType: .restaurant)
-    shopsCoordinator = ItemCoordinator(navigationController: shopsNavigationController, itemListType: .shop)
+    restaurantsCoordinator = ItemCoordinator(navigationController: restaurantsNavigationController, itemType: .restaurant)
+    shopsCoordinator = ItemCoordinator(navigationController: shopsNavigationController, itemType: .shop)
     self.tabBarController = tabBarController
     super.init()
     setup()
@@ -40,12 +40,10 @@ final class TabBarCoordinator: NSObject, Coordinator {
 }
 
 extension TabBarCoordinator: UITabBarControllerDelegate {
-  
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
     if viewController == shopsNavigationController, firstShopsLoad {
       shopsCoordinator.start()
       firstShopsLoad = false
     }
-
   }
 }

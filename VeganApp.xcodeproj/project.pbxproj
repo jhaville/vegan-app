@@ -10,6 +10,9 @@
 		A87A736CD7DF4E1C186CB30A /* Pods_VeganApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52C44015BA44B85AB4ABE11 /* Pods_VeganApp.framework */; };
 		FBEE3B172089373C00906358 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B162089373C00906358 /* FirebaseService.swift */; };
 		FBEE3B192089531300906358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBEE3B182089531300906358 /* GoogleService-Info.plist */; };
+		FBEE3B1C208B4E3D00906358 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */; };
+		FBEE3B1F208B570D00906358 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */; };
+		FBEE3B21208B5A4F00906358 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */; };
 		FBEEBA232083D089008849C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEEBA222083D089008849C6 /* AppDelegate.swift */; };
 		FBEEBA282083D089008849C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FBEEBA262083D089008849C6 /* Main.storyboard */; };
 		FBEEBA2A2083D089008849C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBEEBA292083D089008849C6 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		F52C44015BA44B85AB4ABE11 /* Pods_VeganApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeganApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEE3B162089373C00906358 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		FBEE3B182089531300906358 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		FBEEBA1F2083D089008849C6 /* VeganApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VeganApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEEBA222083D089008849C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FBEEBA272083D089008849C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +87,23 @@
 			path = Firebase;
 			sourceTree = "<group>";
 		};
+		FBEE3B1A208B4E1A00906358 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FBEE3B1D208B56F100906358 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */,
+				FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		FBEEBA162083D088008849C6 = {
 			isa = PBXGroup;
 			children = (
@@ -102,13 +125,15 @@
 		FBEEBA212083D089008849C6 /* VeganApp */ = {
 			isa = PBXGroup;
 			children = (
+				FBEE3B1A208B4E1A00906358 /* ViewModel */,
 				FBEE3B132087FE8B00906358 /* Firebase */,
 				FBEEBA412083E2DD008849C6 /* View */,
 				FBEEBA3E2083E1C0008849C6 /* Controller */,
 				FBEEBA372083DC43008849C6 /* Coordinator */,
 				FBEEBA342083DB26008849C6 /* Model */,
-				FBEEBA222083D089008849C6 /* AppDelegate.swift */,
+				FBEE3B1D208B56F100906358 /* Utils */,
 				FBEEBA262083D089008849C6 /* Main.storyboard */,
+				FBEEBA222083D089008849C6 /* AppDelegate.swift */,
 				FBEEBA292083D089008849C6 /* Assets.xcassets */,
 				FBEEBA2B2083D089008849C6 /* LaunchScreen.storyboard */,
 				FBEEBA2E2083D089008849C6 /* Info.plist */,
@@ -310,10 +335,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBEEBA402083E228008849C6 /* ItemListController.swift in Sources */,
+				FBEE3B1F208B570D00906358 /* UIViewController+Extensions.swift in Sources */,
 				FBEE3B172089373C00906358 /* FirebaseService.swift in Sources */,
 				FBEEBA392083DC58008849C6 /* AppCoordinator.swift in Sources */,
 				FBEEBA492083F716008849C6 /* ItemCell.swift in Sources */,
 				FBEEBA232083D089008849C6 /* AppDelegate.swift in Sources */,
+				FBEE3B1C208B4E3D00906358 /* ItemViewModel.swift in Sources */,
+				FBEE3B21208B5A4F00906358 /* UITableView+Extensions.swift in Sources */,
 				FBEEBA3B2083DF10008849C6 /* TabBarCoordinator.swift in Sources */,
 				FBEEBA3D2083E152008849C6 /* ItemCoordinator.swift in Sources */,
 				FBEEBA362083DB62008849C6 /* Item.swift in Sources */,

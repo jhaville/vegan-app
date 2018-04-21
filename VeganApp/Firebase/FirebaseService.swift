@@ -1,20 +1,24 @@
 import Foundation
 import Firebase
 
-class FirebaseService {
+protocol FirebaseService {
+  func getItems(of type: ItemType, completion: @escaping (Error?, [Item]) -> Void)
+}
+
+class FirebaseServiceImpl {
+  let db = Firestore.firestore()
   
-  func getItems(of type: ItemType, completion: @escaping ([Item]) -> Void) {
-    let db = Firestore.firestore()
-    db.collection(type.toCollectionName()).getDocuments() { (querySnapshot, err) in
-      if let err = err {
-        print("Error getting documents: \(err)")
+  func getItems(of type: ItemType, completion: @escaping (Error?, [Item]?) -> Void) {
+    db.collection(type.toCollectionName()).getDocuments() { querySnapshot, error in
+      if let error = error {
+        completion(error, nil)
       } else {
-        var items = [Item]()
-        for document in querySnapshot!.documents {
-          print("\(document.documentID) => \(document.data())")
-          items.append(Item(name: document.data()["name"] as! String, location: document.data()["location"] as! String, coordinates: Coordinates(longitude: 0, latitude: 0), imageUrls: nil, websiteUrl: nil, itemType: type))
-        }
-        completion(items)
+        let items = querySnapshot?.documents.flatMap({ document -> Item? in
+          let data = document.data()
+          guard let name = data["name"] as? String, let location = data["location"] as? String else { return nil }
+          return Item(name: name, location: location, coordinates: Coordinates(longitude: 0, latitude: 0), imageUrls: nil, websiteUrl: nil, itemType: type)
+        })
+        completion(nil, items)
       }
     }
 

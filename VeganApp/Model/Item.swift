@@ -18,7 +18,7 @@ enum ItemType {
     case .restaurant:
       return "restaurants"
     case .shop:
-      return "shop"
+      return "shops"
     }
   }
 }
