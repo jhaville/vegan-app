@@ -9,6 +9,7 @@ final class ItemCoordinator: Coordinator {
   private let firebaseService = FirebaseServiceImpl()
   private let restaurantsTitle = "Restaurants"
   private let shopsTitle = "Shops"
+  weak var delegate: ItemListControllerDelegate?
   
   init(navigationController: UINavigationController, itemType: ItemType) {
     self.navigationController = navigationController
@@ -21,6 +22,7 @@ final class ItemCoordinator: Coordinator {
     itemListController.loadViewIfNeeded()
     itemListController.update(with: .loading)
     itemListController.itemType = itemType
+    itemListController.delegate = self
     firebaseService.getItems(of: itemType, completion: { error, items in
         self.handleItemReponse(error, items)
     })
@@ -38,3 +40,8 @@ final class ItemCoordinator: Coordinator {
   }
 }
 
+extension ItemCoordinator: ItemListControllerDelegate {
+  func didSelect(_ viewController: ItemListController, itemViewModel: ItemViewModel) {
+    navigationController.pushViewController(UIViewController.load(ItemDetailViewController.self), animated: true)
+  }
+}

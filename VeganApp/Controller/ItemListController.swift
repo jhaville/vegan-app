@@ -6,21 +6,26 @@ enum ViewState<A> {
   case data(A)
 }
 
+protocol ItemListControllerDelegate: class {
+  func didSelect(_ viewController: ItemListController, itemViewModel: ItemViewModel)
+}
+
 class ItemListController: UIViewController {
 
   var itemType: ItemType?
-  private var itemViewModels = [ItemViewModel]()
-    
+  private let itemListDataSource = ItemListDataSource()
+  weak var delegate: ItemListControllerDelegate?
   @IBOutlet weak var errorView: UIView!
   @IBOutlet weak var errorViewLabel: UILabel!
   @IBOutlet weak var tableView: UITableView! {
     didSet {
-      tableView.dataSource = self
+      tableView.dataSource = itemListDataSource
+      tableView.delegate = itemListDataSource
+      itemListDataSource.delegate = self
       tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier)
       tableView.estimatedRowHeight = 66.0
       tableView.rowHeight = UITableViewAutomaticDimension
       tableView.separatorStyle = .none
-      tableView.allowsSelection = false
     }
   }
   
@@ -40,18 +45,21 @@ class ItemListController: UIViewController {
     case .error(let error):
       showErrorState(with: error)
     case .data(let itemsViewModel):
-      if itemsViewModel.itemViewModels.isEmpty { showErrorState(with: nil, isEmpty: true) } else { update(with: itemsViewModel) }
+      if itemsViewModel.itemViewModels.isEmpty {
+        showErrorState(with: nil, isEmpty: true)
+      } else {
+        update(with: itemsViewModel)
+      }
     }
   }
-  
+  private func update(with viewModel: ItemsViewModel) {
+    itemListDataSource.itemsViewModel = viewModel
+    tableView.reloadData()
+  }
+
   private func resetState() {
     errorView.isHidden = true
     tableView.stopLoading()
-  }
-  
-  func update(with viewModel: ItemsViewModel) {
-    itemViewModels = viewModel.itemViewModels
-    tableView.reloadData()
   }
   
   func showLoadingState() {
@@ -72,14 +80,8 @@ class ItemListController: UIViewController {
   }
 }
 
-extension ItemListController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let itemCell = tableView.dequeueReusableCell(withIdentifier: ItemCell.cellIdentifier, for: indexPath) as! ItemCell
-    itemCell.update(with: itemViewModels[indexPath.row])
-    return itemCell
-  }
-  
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return itemViewModels.count
+extension ItemListController: ItemListDataSourceDelegate {
+  func didSelect(_ dataSource: ItemListDataSource, itemViewModel: ItemViewModel) {
+    delegate?.didSelect(self, itemViewModel: itemViewModel)
   }
 }

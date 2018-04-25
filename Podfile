@@ -8,5 +8,5 @@ target 'VeganApp' do
   # Pods for VeganApp
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
-
+  pod 'GoogleMaps'
 end
