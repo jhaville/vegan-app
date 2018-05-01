@@ -12,6 +12,7 @@ class ItemListDataSource: NSObject {
 extension ItemListDataSource: UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let itemCell = tableView.dequeueReusableCell(withIdentifier: ItemCell.cellIdentifier, for: indexPath) as! ItemCell
+    itemCell.selectionStyle = .none
     if let itemViewModels = itemsViewModel?.itemViewModels {
       itemCell.update(with: itemViewModels[indexPath.row])
     }
