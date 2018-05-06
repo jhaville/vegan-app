@@ -80,35 +80,59 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUK-zJ-JJA" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGe-yI-VzQ">
-                                                <rect key="frame" x="15" y="87" width="345" height="78"/>
-                                                <string key="text">Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegan 22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dL0-6X-Nd3">
-                                                <rect key="frame" x="15" y="15" width="345" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                                <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegan Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGj-Pd-Ks9">
-                                                <rect key="frame" x="15" y="43.5" width="345" height="21.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="miJ-xi-Cov">
+                                                <rect key="frame" x="15" y="15" width="345" height="201"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegan Restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPL-yK-uuM" userLabel="Name">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegan Restaurant Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpR-Vg-xSq" userLabel="Summary">
+                                                        <rect key="frame" x="0.0" y="26.5" width="345" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.22vegan.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CQP-mv-CKQ" userLabel="Website">
+                                                        <rect key="frame" x="0.0" y="49.5" width="345" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02083948959" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZI-QC-e3D" userLabel="Contact No.">
+                                                        <rect key="frame" x="0.0" y="72.5" width="345" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2iR-xb-C8w" userLabel="Separator">
+                                                        <rect key="frame" x="0.0" y="95.5" width="345" height="0.5"/>
+                                                        <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="d1a-Zr-QDw"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="100" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGe-yI-VzQ">
+                                                        <rect key="frame" x="0.0" y="101" width="345" height="100"/>
+                                                        <string key="text">Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label Test Text Label</string>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-3j-zTr" userLabel="Location">
-                                                <rect key="frame" x="15" y="187" width="345" height="26.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <rect key="frame" x="15" y="231" width="345" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBC-E7-uqN">
-                                                <rect key="frame" x="0.0" y="221.5" width="375" height="180"/>
+                                                <rect key="frame" x="0.0" y="260.5" width="375" height="180"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="180" id="6sD-Mx-idF"/>
@@ -117,21 +141,15 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="dL0-6X-Nd3" firstAttribute="top" secondItem="HUK-zJ-JJA" secondAttribute="top" constant="15" id="78B-6D-qVO"/>
-                                            <constraint firstItem="QGe-yI-VzQ" firstAttribute="top" secondItem="yGj-Pd-Ks9" secondAttribute="bottom" constant="22" id="9Gt-Qo-IGw"/>
-                                            <constraint firstItem="QGe-yI-VzQ" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="Gzv-yG-yH1"/>
-                                            <constraint firstAttribute="trailing" secondItem="yGj-Pd-Ks9" secondAttribute="trailing" constant="15" id="ImW-qt-21t"/>
-                                            <constraint firstItem="dL0-6X-Nd3" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="Qdi-Ic-fkO"/>
+                                            <constraint firstItem="miJ-xi-Cov" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="2lt-Mq-Ejc"/>
+                                            <constraint firstAttribute="trailing" secondItem="miJ-xi-Cov" secondAttribute="trailing" constant="15" id="NXV-1N-JNX"/>
+                                            <constraint firstItem="TAf-3j-zTr" firstAttribute="top" secondItem="miJ-xi-Cov" secondAttribute="bottom" constant="15" id="WAV-7P-81t"/>
                                             <constraint firstItem="TAf-3j-zTr" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="Wbb-Ni-LFy"/>
+                                            <constraint firstItem="miJ-xi-Cov" firstAttribute="top" secondItem="HUK-zJ-JJA" secondAttribute="top" constant="15" id="Wl0-bA-PMl"/>
                                             <constraint firstAttribute="trailing" secondItem="gBC-E7-uqN" secondAttribute="trailing" id="eZx-KB-gc2"/>
-                                            <constraint firstAttribute="trailing" secondItem="QGe-yI-VzQ" secondAttribute="trailing" constant="15" id="hCR-kx-cjp"/>
                                             <constraint firstItem="TAf-3j-zTr" firstAttribute="bottom" secondItem="gBC-E7-uqN" secondAttribute="top" constant="-8" id="iJp-Ur-uZR"/>
-                                            <constraint firstItem="yGj-Pd-Ks9" firstAttribute="top" secondItem="dL0-6X-Nd3" secondAttribute="bottom" constant="2" id="iV2-km-vEV"/>
-                                            <constraint firstItem="TAf-3j-zTr" firstAttribute="top" secondItem="QGe-yI-VzQ" secondAttribute="bottom" constant="22" id="kQh-74-A0J"/>
-                                            <constraint firstAttribute="trailing" secondItem="dL0-6X-Nd3" secondAttribute="trailing" constant="15" id="lIY-SO-2RI"/>
                                             <constraint firstItem="gBC-E7-uqN" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" id="oH3-Xd-GRi"/>
                                             <constraint firstAttribute="trailing" secondItem="TAf-3j-zTr" secondAttribute="trailing" constant="15" id="rX6-g8-jBO"/>
-                                            <constraint firstItem="yGj-Pd-Ks9" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="sRB-2x-aFj"/>
                                             <constraint firstAttribute="bottom" secondItem="gBC-E7-uqN" secondAttribute="bottom" constant="200" id="xd7-zP-Fvd"/>
                                         </constraints>
                                     </view>
@@ -143,8 +161,8 @@
                                     <constraint firstItem="HUK-zJ-JJA" firstAttribute="bottom" secondItem="dHL-Lp-c7a" secondAttribute="bottom" id="Vl6-DN-6E8"/>
                                 </constraints>
                             </scrollView>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-f9-tqR" userLabel="Horizontal Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="348"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-f9-tqR" userLabel="Horizontal Scroll View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k2b-rs-aUh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
