@@ -76,8 +76,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-Lp-c7a" userLabel="Vertical Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1200"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-Lp-c7a" userLabel="Vertical Scroll View">
+                                <rect key="frame" x="0.0" y="375" width="375" height="1200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HUK-zJ-JJA" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="641"/>
@@ -161,8 +161,8 @@
                                     <constraint firstItem="HUK-zJ-JJA" firstAttribute="bottom" secondItem="dHL-Lp-c7a" secondAttribute="bottom" id="Vl6-DN-6E8"/>
                                 </constraints>
                             </scrollView>
-                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-f9-tqR" userLabel="Horizontal Scroll View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
+                            <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" insetsLayoutMarginsFromSafeArea="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-f9-tqR" userLabel="Horizontal Scroll View">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="375" insetsLayoutMarginsFromSafeArea="NO" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="k2b-rs-aUh">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
@@ -176,6 +176,21 @@
                                     <constraint firstItem="k2b-rs-aUh" firstAttribute="trailing" secondItem="kQz-f9-tqR" secondAttribute="trailing" id="laA-Kw-sd5"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUb-e4-TEi">
+                                <rect key="frame" x="15" y="35" width="53" height="28"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
+                                <state key="normal" title="Back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonTapped:" destination="nfI-J0-f3H" eventType="touchUpInside" id="0AJ-sr-qyj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -186,9 +201,11 @@
                             <constraint firstItem="kQz-f9-tqR" firstAttribute="leading" secondItem="RYu-xd-s7z" secondAttribute="leading" id="ODR-Nr-GbB"/>
                             <constraint firstItem="kQz-f9-tqR" firstAttribute="trailing" secondItem="RYu-xd-s7z" secondAttribute="trailing" id="SRR-Nu-J9b"/>
                             <constraint firstItem="HUK-zJ-JJA" firstAttribute="width" secondItem="RYu-xd-s7z" secondAttribute="width" id="bbC-vK-gfF"/>
+                            <constraint firstItem="iUb-e4-TEi" firstAttribute="leading" secondItem="RYu-xd-s7z" secondAttribute="leading" constant="15" id="fk9-cK-wbG"/>
                             <constraint firstItem="dHL-Lp-c7a" firstAttribute="leading" secondItem="RYu-xd-s7z" secondAttribute="leading" id="jId-ao-pk3"/>
                             <constraint firstItem="dHL-Lp-c7a" firstAttribute="top" secondItem="RYu-xd-s7z" secondAttribute="top" id="mSV-oR-5Wd"/>
                             <constraint firstItem="dHL-Lp-c7a" firstAttribute="trailing" secondItem="RYu-xd-s7z" secondAttribute="trailing" id="r89-MS-n6A"/>
+                            <constraint firstItem="iUb-e4-TEi" firstAttribute="top" secondItem="RYu-xd-s7z" secondAttribute="top" constant="35" id="vGO-kz-z25"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1uh-g8-DQ8"/>
                     </view>

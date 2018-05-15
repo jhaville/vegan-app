@@ -42,6 +42,17 @@ final class ItemCoordinator: Coordinator {
 
 extension ItemCoordinator: ItemListControllerDelegate {
   func didSelect(_ viewController: ItemListController, itemViewModel: ItemViewModel) {
-    navigationController.pushViewController(UIViewController.load(ItemDetailViewController.self), animated: true)
+    let itemDetailController = UIViewController.load(ItemDetailViewController.self)
+    itemDetailController.loadViewIfNeeded()
+    itemDetailController.delegate = self
+    itemDetailController.update(with: itemViewModel)
+    navigationController.pushViewController(itemDetailController, animated: true)
   }
 }
+
+extension ItemCoordinator: ItemDetailViewControllerDelegate {
+    func didTapBackButton(controller: ItemDetailViewController) {
+        navigationController.popViewController(animated: true)
+    }
+}
+

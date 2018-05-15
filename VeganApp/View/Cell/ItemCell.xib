@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-d8-F8D">
                         <rect key="frame" x="0.0" y="0.0" width="441" height="249.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant-background" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-WI-MVK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant-background" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-WI-MVK" customClass="NetworkUIImageView" customModule="VeganApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="441" height="249.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -106,6 +106,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backgroundImageView" destination="w0n-WI-MVK" id="Rob-2O-0yG"/>
                 <outlet property="locationLabel" destination="F5m-6L-RaM" id="JgZ-CN-5rF"/>
                 <outlet property="nameLabel" destination="Tkb-iQ-XGA" id="Cfl-Is-b6x"/>
             </connections>

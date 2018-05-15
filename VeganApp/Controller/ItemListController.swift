@@ -14,6 +14,7 @@ class ItemListController: UIViewController {
 
   var itemType: ItemType?
   private let itemListDataSource = ItemListDataSource()
+  private let refreshControl = UIRefreshControl()
   weak var delegate: ItemListControllerDelegate?
   @IBOutlet weak var errorView: UIView!
   @IBOutlet weak var errorViewLabel: UILabel!
@@ -21,6 +22,8 @@ class ItemListController: UIViewController {
     didSet {
       tableView.dataSource = itemListDataSource
       tableView.delegate = itemListDataSource
+      tableView.refreshControl = refreshControl
+      refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
       itemListDataSource.delegate = self
       tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier)
       tableView.estimatedRowHeight = 66.0
@@ -35,6 +38,14 @@ class ItemListController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
+  }
+
+  @objc private func refresh() {
+    print("refresh")
+    refreshControl.beginRefreshing()
+    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+        self.refreshControl.endRefreshing()
+    }
   }
   
   func update(with viewState: ViewState<ItemsViewModel>) {
