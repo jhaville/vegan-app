@@ -9,4 +9,5 @@ target 'VeganApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'GoogleMaps'
+  pod 'SwiftLocation', '~> 3.2.3'
 end

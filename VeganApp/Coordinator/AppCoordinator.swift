@@ -1,12 +1,15 @@
 import UIKit
+import CoreLocation
 
 protocol Coordinator: class {
   func start()
 }
 
-final class AppCoordinator: Coordinator {
+final class AppCoordinator: NSObject, Coordinator {
   
   private let window: UIWindow
+  let locationManager = CLLocationManager()
+  private let tabBarController = UITabBarController()
   private var coordinators = [Coordinator]()
   
   init(window: UIWindow) {
@@ -18,11 +21,11 @@ final class AppCoordinator: Coordinator {
   }
   
   private func showTabs() {
-    let tabBarController = UITabBarController()
     window.rootViewController = tabBarController
-    
+
     let tabBarCoordinator = TabBarCoordinator(tabBarController: tabBarController)
     tabBarCoordinator.start()
     coordinators.append(tabBarCoordinator)
   }
 }
+

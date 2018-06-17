@@ -1,4 +1,5 @@
 import UIKit
+import CoreLocation
 
 final class TabBarCoordinator: NSObject, Coordinator {
   
@@ -8,10 +9,13 @@ final class TabBarCoordinator: NSObject, Coordinator {
   private let restaurantsNavigationController = UINavigationController()
   private let shopsNavigationController = UINavigationController()
   
-  private let restaurantsCoordinator: Coordinator
-  private let shopsCoordinator: Coordinator
+  private let restaurantsCoordinator: ItemCoordinator
+  private let shopsCoordinator: ItemCoordinator
+
+  private let locationManager = CLLocationManager()
   
   private var firstShopsLoad = true
+  private var didUpdateLocation = false
   
   init(tabBarController: UITabBarController) {
     restaurantsCoordinator = ItemCoordinator(navigationController: restaurantsNavigationController, itemType: .restaurant)
@@ -35,7 +39,9 @@ final class TabBarCoordinator: NSObject, Coordinator {
   }
   
   func start() {
-    restaurantsCoordinator.start()
+    locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+    locationManager.distanceFilter = 100.0
+    locationManager.delegate = self
   }
 }
 
@@ -47,3 +53,39 @@ extension TabBarCoordinator: UITabBarControllerDelegate {
     }
   }
 }
+
+extension TabBarCoordinator: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last, !didUpdateLocation {
+            print(location)
+            didUpdateLocation = true
+            restaurantsCoordinator.setUserLocation(to: location)
+            restaurantsCoordinator.start()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+            break
+        case .authorizedWhenInUse:
+            manager.requestLocation()
+            break
+        case .authorizedAlways:
+            break
+        case .restricted:
+            // restricted by e.g. parental controls. User can't enable Location Services
+            break
+        case .denied:
+            // user denied your app access to Location Services, but can grant access from Settings.app
+            break
+        }
+    }
+}
+
+

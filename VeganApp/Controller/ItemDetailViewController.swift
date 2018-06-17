@@ -2,28 +2,42 @@ import UIKit
 import GoogleMaps
 
 protocol ItemDetailViewControllerDelegate: class {
-    func didTapBackButton(controller: ItemDetailViewController)
+    func didTapBackButton(_ controller: ItemDetailViewController)
+    func didTapShowMeDirectionsButton(_ controller: ItemDetailViewController, with coordinates: [Double])
 }
 
 class ItemDetailViewController: UIViewController {
   
-    @IBAction func backButtonTapped(_ sender: Any) {
-        delegate?.didTapBackButton(controller: self)
-    }
-    @IBOutlet weak var verticalScrollView: UIScrollView!
-    @IBOutlet weak var mapView: UIView! {
+    @IBOutlet weak var showMeDirectionsButton: UIButton! {
         didSet {
-            let camera = GMSCameraPosition.camera(withLatitude: 51.486060, longitude: -0.203040, zoom: 16.0)
-            let map = GMSMapView.map(withFrame: mapView.bounds, camera: camera)
-            mapView.addSubview(map)
-
-            let marker = GMSMarker()
-            marker.position = CLLocationCoordinate2D(latitude: 51.486060, longitude: -0.203040)
-            marker.map = map
+            let chevronRightImage = #imageLiteral(resourceName: "chevron-right-2").withRenderingMode(.alwaysTemplate)
+            showMeDirectionsButton.contentMode = .scaleAspectFit
+            showMeDirectionsButton.imageEdgeInsets = .init(top: 2, left: 5, bottom: 2, right: 0)
+            showMeDirectionsButton.setImage(chevronRightImage, for: .normal)
+            showMeDirectionsButton.tintColor = UIColor(red: 34/255, green: 81/255, blue: 107/255, alpha: 0.5)
+            showMeDirectionsButton.semanticContentAttribute = .forceRightToLeft
         }
     }
+    @IBAction func backButtonTapped(_ sender: Any) {
+        delegate?.didTapBackButton(self)
+    }
+
+    @IBAction func showMeDirectionsButtonTapped(_ sender: Any) {
+        if let coordinates = coordinates {
+            delegate?.didTapShowMeDirectionsButton(self, with: coordinates)
+        }
+    }
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var shortSummaryLabel: UILabel!
+    @IBOutlet weak var websiteUrlLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var verticalScrollView: UIScrollView!
+    @IBOutlet weak var mapView: UIView!
     @IBOutlet weak var imagesStackView: UIStackView!
     weak var delegate: ItemDetailViewControllerDelegate?
+    private var coordinates: [Double]?
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -43,15 +57,31 @@ class ItemDetailViewController: UIViewController {
     }
 
     func update(with viewModel: ItemViewModel) {
+
+        coordinates = viewModel.coordinates
+
+        nameLabel.text = viewModel.name
+        shortSummaryLabel.text = viewModel.shortSummary
+        phoneNumberLabel.text = viewModel.phoneNumber
+        descriptionLabel.text = viewModel.description
+        websiteUrlLabel.text = viewModel.websiteUrl?.absoluteString
+
         viewModel.imageUrls?.forEach {
           let networkUIImageView = NetworkUIImageView()
           networkUIImageView.loadImage(from: $0)
           networkUIImageView.contentMode = .scaleAspectFill
           networkUIImageView.clipsToBounds = true
           networkUIImageView.translatesAutoresizingMaskIntoConstraints = false
-          self.imagesStackView.addArrangedSubview(networkUIImageView)
+          imagesStackView.addArrangedSubview(networkUIImageView)
         }
         imagesStackView.arrangedSubviews.first?.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
 
+        let camera = GMSCameraPosition.camera(withLatitude: viewModel.latitude, longitude: viewModel.longitude, zoom: 16.0)
+        let map = GMSMapView.map(withFrame: mapView.bounds, camera: camera)
+        mapView.addSubview(map)
+
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: viewModel.latitude, longitude: viewModel.longitude)
+        marker.map = map
     }
 }

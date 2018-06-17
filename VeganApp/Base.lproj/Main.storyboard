@@ -126,7 +126,7 @@
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAf-3j-zTr" userLabel="Location">
-                                                <rect key="frame" x="15" y="231" width="345" height="21.5"/>
+                                                <rect key="frame" x="15" y="231" width="72.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                 <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -138,18 +138,30 @@
                                                     <constraint firstAttribute="height" constant="180" id="6sD-Mx-idF"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-bn-wna">
+                                                <rect key="frame" x="104.5" y="227.5" width="255.5" height="29"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <state key="normal" title="Show Me Directions">
+                                                    <color key="titleColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showMeDirectionsButtonTapped:" destination="nfI-J0-f3H" eventType="touchUpInside" id="M9r-yP-9Kx"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="miJ-xi-Cov" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="2lt-Mq-Ejc"/>
+                                            <constraint firstItem="5DN-bn-wna" firstAttribute="leading" secondItem="TAf-3j-zTr" secondAttribute="trailing" constant="17" id="COF-nw-QLA"/>
                                             <constraint firstAttribute="trailing" secondItem="miJ-xi-Cov" secondAttribute="trailing" constant="15" id="NXV-1N-JNX"/>
                                             <constraint firstItem="TAf-3j-zTr" firstAttribute="top" secondItem="miJ-xi-Cov" secondAttribute="bottom" constant="15" id="WAV-7P-81t"/>
                                             <constraint firstItem="TAf-3j-zTr" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" constant="15" id="Wbb-Ni-LFy"/>
                                             <constraint firstItem="miJ-xi-Cov" firstAttribute="top" secondItem="HUK-zJ-JJA" secondAttribute="top" constant="15" id="Wl0-bA-PMl"/>
+                                            <constraint firstItem="5DN-bn-wna" firstAttribute="centerY" secondItem="TAf-3j-zTr" secondAttribute="centerY" id="a4y-NU-4fX"/>
                                             <constraint firstAttribute="trailing" secondItem="gBC-E7-uqN" secondAttribute="trailing" id="eZx-KB-gc2"/>
                                             <constraint firstItem="TAf-3j-zTr" firstAttribute="bottom" secondItem="gBC-E7-uqN" secondAttribute="top" constant="-8" id="iJp-Ur-uZR"/>
+                                            <constraint firstAttribute="trailing" secondItem="5DN-bn-wna" secondAttribute="trailing" constant="15" id="jU3-6w-nAa"/>
                                             <constraint firstItem="gBC-E7-uqN" firstAttribute="leading" secondItem="HUK-zJ-JJA" secondAttribute="leading" id="oH3-Xd-GRi"/>
-                                            <constraint firstAttribute="trailing" secondItem="TAf-3j-zTr" secondAttribute="trailing" constant="15" id="rX6-g8-jBO"/>
                                             <constraint firstAttribute="bottom" secondItem="gBC-E7-uqN" secondAttribute="bottom" constant="200" id="xd7-zP-Fvd"/>
                                         </constraints>
                                     </view>
@@ -211,9 +223,15 @@
                     </view>
                     <size key="freeformSize" width="375" height="1200"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="QGe-yI-VzQ" id="GlH-UB-sC8"/>
                         <outlet property="imagesStackView" destination="k2b-rs-aUh" id="TvN-N3-dGV"/>
                         <outlet property="mapView" destination="gBC-E7-uqN" id="Zfd-o2-Wzh"/>
+                        <outlet property="nameLabel" destination="rPL-yK-uuM" id="fpY-l6-I2M"/>
+                        <outlet property="phoneNumberLabel" destination="BZI-QC-e3D" id="7Hh-wM-RyH"/>
+                        <outlet property="shortSummaryLabel" destination="gpR-Vg-xSq" id="Shh-42-epd"/>
+                        <outlet property="showMeDirectionsButton" destination="5DN-bn-wna" id="inM-b0-Qdf"/>
                         <outlet property="verticalScrollView" destination="dHL-Lp-c7a" id="9aa-gU-4rI"/>
+                        <outlet property="websiteUrlLabel" destination="CQP-mv-CKQ" id="DZG-hl-bfU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVd-1t-57I" userLabel="First Responder" sceneMemberID="firstResponder"/>

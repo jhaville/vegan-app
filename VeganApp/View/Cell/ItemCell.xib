@@ -107,6 +107,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="backgroundImageView" destination="w0n-WI-MVK" id="Rob-2O-0yG"/>
+                <outlet property="distanceLabel" destination="zXb-Bv-Zmr" id="La2-85-W56"/>
                 <outlet property="locationLabel" destination="F5m-6L-RaM" id="JgZ-CN-5rF"/>
                 <outlet property="nameLabel" destination="Tkb-iQ-XGA" id="Cfl-Is-b6x"/>
             </connections>
