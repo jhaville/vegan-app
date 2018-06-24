@@ -16,6 +16,8 @@ final class TabBarCoordinator: NSObject, Coordinator {
   
   private var firstShopsLoad = true
   private var didUpdateLocation = false
+
+  private var userLocation: CLLocation?
   
   init(tabBarController: UITabBarController) {
     restaurantsCoordinator = ItemCoordinator(navigationController: restaurantsNavigationController, itemType: .restaurant)
@@ -36,6 +38,8 @@ final class TabBarCoordinator: NSObject, Coordinator {
     coordinators.append(restaurantsCoordinator)
     coordinators.append(shopsCoordinator)
     tabBarController.delegate = self
+
+    restaurantsCoordinator.start()
   }
   
   func start() {
@@ -47,8 +51,9 @@ final class TabBarCoordinator: NSObject, Coordinator {
 
 extension TabBarCoordinator: UITabBarControllerDelegate {
   func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-    if viewController == shopsNavigationController, firstShopsLoad {
+    if viewController == shopsNavigationController, firstShopsLoad, let location = userLocation  {
       shopsCoordinator.start()
+      shopsCoordinator.update(with: location)
       firstShopsLoad = false
     }
   }
@@ -56,11 +61,9 @@ extension TabBarCoordinator: UITabBarControllerDelegate {
 
 extension TabBarCoordinator: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last, !didUpdateLocation {
-            print(location)
-            didUpdateLocation = true
-            restaurantsCoordinator.setUserLocation(to: location)
-            restaurantsCoordinator.start()
+        if let location = locations.last, userLocation == nil {
+            self.userLocation = location
+            restaurantsCoordinator.update(with: location)
         }
     }
 

@@ -8,6 +8,7 @@ enum ViewState<A> {
 
 protocol ItemListControllerDelegate: class {
   func didSelect(_ viewController: ItemListController, itemViewModel: ItemViewModel)
+  func didRefresh(_ viewController: ItemListController)
 }
 
 class ItemListController: UIViewController {
@@ -34,6 +35,7 @@ class ItemListController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    view.backgroundColor = .white
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +43,8 @@ class ItemListController: UIViewController {
   }
 
   @objc private func refresh() {
-    print("refresh")
     refreshControl.beginRefreshing()
-    DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
-        self.refreshControl.endRefreshing()
-    }
+    delegate?.didRefresh(self)
   }
   
   func update(with viewState: ViewState<ItemsViewModel>) {
@@ -69,6 +68,7 @@ class ItemListController: UIViewController {
   }
 
   private func resetState() {
+    refreshControl.endRefreshing()
     errorView.isHidden = true
     tableView.stopLoading()
   }

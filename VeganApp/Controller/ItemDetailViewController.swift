@@ -8,16 +8,6 @@ protocol ItemDetailViewControllerDelegate: class {
 
 class ItemDetailViewController: UIViewController {
   
-    @IBOutlet weak var showMeDirectionsButton: UIButton! {
-        didSet {
-            let chevronRightImage = #imageLiteral(resourceName: "chevron-right-2").withRenderingMode(.alwaysTemplate)
-            showMeDirectionsButton.contentMode = .scaleAspectFit
-            showMeDirectionsButton.imageEdgeInsets = .init(top: 2, left: 5, bottom: 2, right: 0)
-            showMeDirectionsButton.setImage(chevronRightImage, for: .normal)
-            showMeDirectionsButton.tintColor = UIColor(red: 34/255, green: 81/255, blue: 107/255, alpha: 0.5)
-            showMeDirectionsButton.semanticContentAttribute = .forceRightToLeft
-        }
-    }
     @IBAction func backButtonTapped(_ sender: Any) {
         delegate?.didTapBackButton(self)
     }

@@ -12,8 +12,8 @@ final class ItemCoordinator: Coordinator {
   private let mapService = MapService()
   private let restaurantsTitle = "Restaurants"
   private let shopsTitle = "Shops"
+  private var location: CLLocation?
   weak var delegate: ItemListControllerDelegate?
-  private var userLocation: CLLocation?
   
   init(navigationController: UINavigationController, itemType: ItemType) {
     self.navigationController = navigationController
@@ -22,8 +22,12 @@ final class ItemCoordinator: Coordinator {
     itemListController.title = itemType == .restaurant ? restaurantsTitle : shopsTitle
   }
 
-  func setUserLocation(to location: CLLocation) {
-    self.userLocation = location
+  func update(with location: CLLocation) {
+    self.location = location
+    let item = Resource<Items>(url: URL(string: "http://localhost:3000/" + itemType.toCollectionName() + "?lat=" + "\(location.coordinate.latitude)" + "&long=" + "\(location.coordinate.longitude)")!)
+    apiService.load(resource: item) { (error, item) in
+        self.handleItemResponse(error, item?.items)
+    }
   }
 
   func start() {
@@ -31,16 +35,9 @@ final class ItemCoordinator: Coordinator {
     itemListController.update(with: .loading)
     itemListController.itemType = itemType
     itemListController.delegate = self
-
-    if let latitude = userLocation?.coordinate.latitude, let longitude = userLocation?.coordinate.longitude {
-        let item = Resource<Items>(url: URL(string: "http://localhost:3000/restaurants?lat=" + "\(latitude)" + "&long=" + "\(longitude)")!)
-            apiService.load(resource: item) { (error, item) in
-                self.handleItemResponse(error, item?.items)
-            }
-            navigationController.viewControllers = [itemListController]
-    }
+    navigationController.viewControllers = [itemListController]
   }
-  
+
   private func handleItemResponse(_ error: Error?, _ items: [Item]?) {
     DispatchQueue.main.async {
       if error != nil { self.itemListController.update(with: ViewState.error(error)) }
@@ -59,6 +56,11 @@ extension ItemCoordinator: ItemListControllerDelegate {
     itemDetailController.delegate = self
     itemDetailController.update(with: itemViewModel)
     navigationController.pushViewController(itemDetailController, animated: true)
+  }
+  func didRefresh(_ viewController: ItemListController) {
+    if let location = location {
+        update(with: location)
+    }
   }
 }
 

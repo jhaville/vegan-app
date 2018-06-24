@@ -14,12 +14,9 @@ final class NetworkUIImageView: UIImageView {
         }
 
         self.currentUrl = url
-
+        backgroundColor = UIColor.lightGray.withAlphaComponent(0.5)
         URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                print(error.localizedDescription)
-                return
-            }
+            guard error == nil else { return }
             guard self.currentUrl == url, let data = data, let image = UIImage(data: data) else { return }
             NetworkUIImageView.imageCache.setObject(image, forKey: url.absoluteString as NSString)
             DispatchQueue.main.async {

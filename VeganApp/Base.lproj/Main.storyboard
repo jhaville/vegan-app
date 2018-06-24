@@ -229,7 +229,6 @@
                         <outlet property="nameLabel" destination="rPL-yK-uuM" id="fpY-l6-I2M"/>
                         <outlet property="phoneNumberLabel" destination="BZI-QC-e3D" id="7Hh-wM-RyH"/>
                         <outlet property="shortSummaryLabel" destination="gpR-Vg-xSq" id="Shh-42-epd"/>
-                        <outlet property="showMeDirectionsButton" destination="5DN-bn-wna" id="inM-b0-Qdf"/>
                         <outlet property="verticalScrollView" destination="dHL-Lp-c7a" id="9aa-gU-4rI"/>
                         <outlet property="websiteUrlLabel" destination="CQP-mv-CKQ" id="DZG-hl-bfU"/>
                     </connections>
