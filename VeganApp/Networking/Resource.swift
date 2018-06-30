@@ -1,13 +1,13 @@
 import Foundation
 
 struct Resource<A: Decodable> {
-    let url: URL
+    let urlRequest: URLRequest
     let parse: (Data) -> A?
 }
 
 extension Resource {
-    init(url: URL) {
-        self.url = url
+    init(urlRequest: URLRequest) {
+        self.urlRequest = urlRequest
         self.parse = { data in
             let decoder = JSONDecoder()
             do {

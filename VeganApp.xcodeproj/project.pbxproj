@@ -11,6 +11,7 @@
 		3A2DBC4420C301D60022B892 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2DBC4320C301D60022B892 /* MapService.swift */; };
 		3AB085C120B4DD86005DA5E4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB085C020B4DD86005DA5E4 /* Resource.swift */; };
 		3AE5064220AB83C100546783 /* NetworkUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5064120AB83C100546783 /* NetworkUIImageView.swift */; };
+		3AFD6C3320E7C56200FDB005 /* BackendEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */; };
 		A87A736CD7DF4E1C186CB30A /* Pods_VeganApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F52C44015BA44B85AB4ABE11 /* Pods_VeganApp.framework */; };
 		FBEE3B172089373C00906358 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B162089373C00906358 /* FirebaseService.swift */; };
 		FBEE3B192089531300906358 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FBEE3B182089531300906358 /* GoogleService-Info.plist */; };
@@ -37,6 +38,7 @@
 		3A2DBC4320C301D60022B892 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
 		3AB085C020B4DD86005DA5E4 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		3AE5064120AB83C100546783 /* NetworkUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUIImageView.swift; sourceTree = "<group>"; };
+		3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendEnvironment.swift; sourceTree = "<group>"; };
 		417A6A1B8A7BCE02868B06B6 /* Pods-VeganApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VeganApp/Pods-VeganApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C46A1A89B31412540B197E73 /* Pods-VeganApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VeganApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-VeganApp/Pods-VeganApp.release.xcconfig"; sourceTree = "<group>"; };
 		F52C44015BA44B85AB4ABE11 /* Pods_VeganApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VeganApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				3AB085C020B4DD86005DA5E4 /* Resource.swift */,
+				3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AFD6C3320E7C56200FDB005 /* BackendEnvironment.swift in Sources */,
 				FBEEBA402083E228008849C6 /* ItemListController.swift in Sources */,
 				3A2DBC4420C301D60022B892 /* MapService.swift in Sources */,
 				FBEE3B1F208B570D00906358 /* UIViewController+Extensions.swift in Sources */,

@@ -24,8 +24,10 @@ final class ItemCoordinator: Coordinator {
 
   func update(with location: CLLocation) {
     self.location = location
-    let item = Resource<Items>(url: URL(string: "http://localhost:3000/" + itemType.toCollectionName() + "?lat=" + "\(location.coordinate.latitude)" + "&long=" + "\(location.coordinate.longitude)")!)
-    apiService.load(resource: item) { (error, item) in
+
+    guard let urlRequest = apiService.urlRequest(path: "/" + itemType.toCollectionName(), urlParameters: ["lat": "\(location.coordinate.latitude)", "long": "\(location.coordinate.longitude)"]) else { return }
+
+    apiService.load(resource: Resource<Items>(urlRequest: urlRequest)) { (error, item) in
         self.handleItemResponse(error, item?.items)
     }
   }
