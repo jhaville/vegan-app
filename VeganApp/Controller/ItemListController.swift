@@ -87,7 +87,8 @@ class ItemListController: UIViewController {
   }
   
   func showEmptyState() {
-    errorViewLabel.text = "There are currently no \((itemType ?? .restaurant).toCollectionName()) near you, please check back later"
+    let errorTextNearYou = itemType == .subscription ? "" : " near you"
+    errorViewLabel.text = "There are currently no \((itemType ?? .restaurant).toCollectionName())" + errorTextNearYou + ", please check back later"
   }
 }
 

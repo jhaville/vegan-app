@@ -66,6 +66,8 @@ class ItemDetailViewController: UIViewController {
         }
         imagesStackView.arrangedSubviews.first?.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
 
+        mapView.isHidden = !viewModel.shouldShouldMap
+
         let camera = GMSCameraPosition.camera(withLatitude: viewModel.latitude, longitude: viewModel.longitude, zoom: 16.0)
         let map = GMSMapView.map(withFrame: mapView.bounds, camera: camera)
         mapView.addSubview(map)

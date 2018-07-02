@@ -7,7 +7,7 @@ public enum BackendEnvironment: String {
     func getBaseUrlString() -> String {
         switch self {
         case .live:
-            return "https://api.healthapp.tenlabs.io"
+            return "https://healthapp.tenlabs.io"
         case .development:
             return "http://localhost:3000"
         }

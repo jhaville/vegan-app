@@ -10,8 +10,6 @@ final class ItemCoordinator: Coordinator {
   private let firebaseService = FirebaseServiceImpl()
   private let apiService = APIService()
   private let mapService = MapService()
-  private let restaurantsTitle = "Restaurants"
-  private let shopsTitle = "Shops"
   private var location: CLLocation?
   weak var delegate: ItemListControllerDelegate?
   
@@ -19,7 +17,7 @@ final class ItemCoordinator: Coordinator {
     self.navigationController = navigationController
     self.itemType = itemType
     self.itemListController = UIViewController.load(ItemListController.self)
-    itemListController.title = itemType == .restaurant ? restaurantsTitle : shopsTitle
+    itemListController.title = itemType.toCollectionName().capitalized
   }
 
   func update(with location: CLLocation) {

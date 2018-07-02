@@ -8,10 +8,10 @@ struct Items: Decodable {
 struct Item: Decodable {
   let name: String
   let shortSummary: String
-  let phoneNumber: String
+  let phoneNumber: String?
   let description: String
-  let locationName: String
-  let location: Location
+  let locationName: String?
+  let location: Location?
   let imageUrls: [URL]?
   let websiteUrl: URL?
   let itemType: ItemType
@@ -25,6 +25,7 @@ struct Location: Decodable {
 enum ItemType: String, Decodable {
   case restaurant
   case shop
+  case subscription
   
   func toCollectionName() -> String {
     switch self {
@@ -32,6 +33,8 @@ enum ItemType: String, Decodable {
       return "restaurants"
     case .shop:
       return "shops"
+    case .subscription:
+      return "subscriptions"
     }
   }
 }
