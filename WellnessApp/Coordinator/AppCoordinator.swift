@@ -8,7 +8,6 @@ protocol Coordinator: class {
 final class AppCoordinator: NSObject, Coordinator {
   
   private let window: UIWindow
-  let locationManager = CLLocationManager()
   private let tabBarController = UITabBarController()
   private var coordinators = [Coordinator]()
   

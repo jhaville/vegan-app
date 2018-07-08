@@ -83,10 +83,8 @@ extension TabBarCoordinator: CLLocationManagerDelegate {
         case .authorizedAlways:
             break
         case .restricted:
-            // restricted by e.g. parental controls. User can't enable Location Services
             break
         case .denied:
-            // user denied your app access to Location Services, but can grant access from Settings.app
             break
         }
     }
