@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05484472D8F0962A8D8F75C19B78EBEA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4986B1328C7069E236FF7252E862D2 /* Foundation.framework */; };
 		212A701913D5D454741C1AC434482704 /* Pods-WellnessApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C420F0F03F68587E657FE5BCDAEC9E1A /* Pods-WellnessApp-dummy.m */; };
 		2AE1BAC349B40E2CE493D60F88732899 /* GeocoderRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2262659838F04085D78713CE6F0F50 /* GeocoderRequest.swift */; };
 		3E70FA743482FA3375C3E658E3F63E60 /* SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E3B587A05294481146289A38910E33DF /* SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -14,11 +15,16 @@
 		6D70F61CF61EFADB5670FC573D8BA629 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7534D55C49A3FAA94FCEBB03866CEE9B /* Shared.swift */; };
 		7D553D246512C342A8DDCE668D8A71A2 /* IPLocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78D229AA8027BE84B73D3F24136A866 /* IPLocationRequest.swift */; };
 		8A4F45685367043BA6B113FE1496E346 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E8CB254D1C3B03733EB3FB32FC2460 /* Locator.swift */; };
+		8D7402994CE400506B8DC3ECC18B1683 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18D06F1B273F9D00265E613FFC58E916 /* CoreLocation.framework */; };
+		A010C388FD7B52873F44C5015CB65EC0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4986B1328C7069E236FF7252E862D2 /* Foundation.framework */; };
 		A0407524FAE0155E7CAD993B2E6E3827 /* SwiftLocation-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F0AD2355831D22594FCAE07A98DEA86 /* SwiftLocation-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A460A5309355685102929014B1B0742F /* LocationRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C66DC0367625F76C91B1CC14A8F15273 /* LocationRequest.swift */; };
 		A5044D89C359344CC2F5EED2617D94F6 /* SwiftLocation-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EBDA0176CC2BDB5635BC8C507B8ED06 /* SwiftLocation-dummy.m */; };
 		AD4C6BBF183D1F57F0D99E6932A3A1C0 /* Pods-WellnessApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F333D94156AB4897D3D1422852CA8744 /* Pods-WellnessApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ADEAB622DCFA964690D01F38A987CAC1 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7E75E8B6C5737D04E3E2AA1A8689CB6 /* MapKit.framework */; };
+		CB02FB7B50ED67B974CED15E232E6614 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A4986B1328C7069E236FF7252E862D2 /* Foundation.framework */; };
 		D02AFEC4E4B2F3F6ABB49ED4A012C286 /* HeadingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1ADC2787FC4BCC151F2D8A549686DF1 /* HeadingRequest.swift */; };
+		D5C7F8C2E8B364BC3B099054E6D57E7B /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B05BA81E82411EDB29657C6287AC2D2 /* SwiftyJSON.framework */; };
 		EDADBF5352A464FDE10E9C2F2EAB50C8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6292E71AEE313F756BF11BB06CB7627 /* SwiftyJSON.swift */; };
 		F085E544E2D55615F1B0B4076DE9BDB2 /* FindPlaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC5B5D0978F41523CADDCD92C5E3E5B /* FindPlaceRequest.swift */; };
 /* End PBXBuildFile section */
@@ -48,7 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18D06F1B273F9D00265E613FFC58E916 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		1939CA06A98F57C2838763FF3A2F1C56 /* SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyJSON.xcconfig; sourceTree = "<group>"; };
+		1A4986B1328C7069E236FF7252E862D2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1A773B2BEB02C1DAC92CDFA41368DF12 /* GoogleMaps.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		1F0AD2355831D22594FCAE07A98DEA86 /* SwiftLocation-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftLocation-umbrella.h"; sourceTree = "<group>"; };
 		21FB35EBA676374CFE64531E6287E0CF /* GoogleMapsBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMapsBase.framework; path = Base/Frameworks/GoogleMapsBase.framework; sourceTree = "<group>"; };
@@ -59,6 +67,7 @@
 		405DEF102A0AB44A703136164FA78BE0 /* SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
 		50DF71936B8C6492226F1A64B96B4E5D /* Pods-WellnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WellnessApp.release.xcconfig"; sourceTree = "<group>"; };
 		53E5A89A328C3846B438F71CAA05CE9C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B05BA81E82411EDB29657C6287AC2D2 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E98CEB6A615E3A1BD1DAC50D797E5A2 /* Pods-WellnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-WellnessApp.debug.xcconfig"; sourceTree = "<group>"; };
 		6DC5B5D0978F41523CADDCD92C5E3E5B /* FindPlaceRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FindPlaceRequest.swift; path = Sources/FindPlaceRequest.swift; sourceTree = "<group>"; };
 		6FB4E652CBF63BC69B962D08978AB321 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = Maps/Frameworks/GoogleMaps.framework; sourceTree = "<group>"; };
@@ -67,8 +76,8 @@
 		78108B16688669CF02E1D79195962F05 /* Pods-WellnessApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-WellnessApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8692E803FD7ABFEBC004293E7663F4AD /* SwiftLocation.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLocation.xcconfig; sourceTree = "<group>"; };
 		8BE5445983F0D5091E8AFF79517F9648 /* SwiftLocation-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftLocation-prefix.pch"; sourceTree = "<group>"; };
-		912386256E52AB5DF9AF9A91E7CE2DA0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		912386256E52AB5DF9AF9A91E7CE2DA0 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyJSON.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AA2262659838F04085D78713CE6F0F50 /* GeocoderRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeocoderRequest.swift; path = Sources/GeocoderRequest.swift; sourceTree = "<group>"; };
 		ADD62499C428057EC35FE072D901AB4A /* SwiftLocation.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftLocation.modulemap; sourceTree = "<group>"; };
 		B5D57C9C31183CAB7338949557506CE6 /* Pods-WellnessApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-WellnessApp-frameworks.sh"; sourceTree = "<group>"; };
@@ -76,6 +85,7 @@
 		C420F0F03F68587E657FE5BCDAEC9E1A /* Pods-WellnessApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-WellnessApp-dummy.m"; sourceTree = "<group>"; };
 		C66DC0367625F76C91B1CC14A8F15273 /* LocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationRequest.swift; path = Sources/LocationRequest.swift; sourceTree = "<group>"; };
 		C78D229AA8027BE84B73D3F24136A866 /* IPLocationRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IPLocationRequest.swift; path = Sources/IPLocationRequest.swift; sourceTree = "<group>"; };
+		C7E75E8B6C5737D04E3E2AA1A8689CB6 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
 		D1ADC2787FC4BCC151F2D8A549686DF1 /* HeadingRequest.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeadingRequest.swift; path = Sources/HeadingRequest.swift; sourceTree = "<group>"; };
 		D2809B05577C5EEB4A7BF1D8F2321F4D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D48C562F2150B7772DB7AEFAC8ECC980 /* SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftyJSON.modulemap; sourceTree = "<group>"; };
@@ -83,8 +93,8 @@
 		D6292E71AEE313F756BF11BB06CB7627 /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
 		E3B587A05294481146289A38910E33DF /* SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
 		F333D94156AB4897D3D1422852CA8744 /* Pods-WellnessApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-WellnessApp-umbrella.h"; sourceTree = "<group>"; };
-		F38ABC064FF899C60F30609C1AA291EF /* Pods_WellnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WellnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F753C5C1F63C08B791042CB4D05FF843 /* SwiftLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F38ABC064FF899C60F30609C1AA291EF /* Pods_WellnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_WellnessApp.framework; path = "Pods-WellnessApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F753C5C1F63C08B791042CB4D05FF843 /* SwiftLocation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftLocation.framework; path = SwiftLocation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F844CE657166BD01E5DEB6BD1B832339 /* SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB02FB7B50ED67B974CED15E232E6614 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +111,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D7402994CE400506B8DC3ECC18B1683 /* CoreLocation.framework in Frameworks */,
+				A010C388FD7B52873F44C5015CB65EC0 /* Foundation.framework in Frameworks */,
+				ADEAB622DCFA964690D01F38A987CAC1 /* MapKit.framework in Frameworks */,
+				D5C7F8C2E8B364BC3B099054E6D57E7B /* SwiftyJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05484472D8F0962A8D8F75C19B78EBEA /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +194,7 @@
 				19A4355BF858887466DD887F31777D2F /* Base */,
 				649CB6BB9F8105493E283750697E25E4 /* Maps */,
 			);
+			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -193,6 +210,7 @@
 				7534D55C49A3FAA94FCEBB03866CEE9B /* Shared.swift */,
 				0C8CABFAB6E542C88C9CE8394A3CB004 /* Support Files */,
 			);
+			name = SwiftLocation;
 			path = SwiftLocation;
 			sourceTree = "<group>";
 		};
@@ -223,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				D62F6C00C158518C5BA2F0A26605445B /* Frameworks */,
 				212F7C3C9F89ACB0E905EE726DCFA186 /* Pods */,
 				0920AA02CBF07D0B9DA05E4FD76B4426 /* Products */,
 				EFD38DAB4B6263C7469797E9C4DD36AA /* Targets Support Files */,
@@ -237,13 +256,33 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		9B446993EF88CE59908CC55850094599 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				18D06F1B273F9D00265E613FFC58E916 /* CoreLocation.framework */,
+				1A4986B1328C7069E236FF7252E862D2 /* Foundation.framework */,
+				C7E75E8B6C5737D04E3E2AA1A8689CB6 /* MapKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 		D063CC9C52655139080DFC8E65C4B65F /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
 				D6292E71AEE313F756BF11BB06CB7627 /* SwiftyJSON.swift */,
 				6FEF16562BD0D85484120181BC8ECD24 /* Support Files */,
 			);
+			name = SwiftyJSON;
 			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		D62F6C00C158518C5BA2F0A26605445B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B05BA81E82411EDB29657C6287AC2D2 /* SwiftyJSON.framework */,
+				9B446993EF88CE59908CC55850094599 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		EFD38DAB4B6263C7469797E9C4DD36AA /* Targets Support Files */ = {

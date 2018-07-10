@@ -12,6 +12,7 @@
 		3AB085C120B4DD86005DA5E4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB085C020B4DD86005DA5E4 /* Resource.swift */; };
 		3AE5064220AB83C100546783 /* NetworkUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5064120AB83C100546783 /* NetworkUIImageView.swift */; };
 		3AFD6C3320E7C56200FDB005 /* BackendEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */; };
+		3E2BEC12717FA5018C7ABA54 /* Pods_WellnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7D198C4FA4393505CAF1DA /* Pods_WellnessApp.framework */; };
 		FBEE3B1C208B4E3D00906358 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */; };
 		FBEE3B1F208B570D00906358 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */; };
 		FBEE3B21208B5A4F00906358 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */; };
@@ -38,6 +39,7 @@
 		3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendEnvironment.swift; sourceTree = "<group>"; };
 		83C4E7FB57343BCF0EB686DB /* Pods-WellnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.release.xcconfig"; sourceTree = "<group>"; };
 		89BEE2FADB7296743C8A57AF /* Pods-WellnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.debug.xcconfig"; sourceTree = "<group>"; };
+		EA7D198C4FA4393505CAF1DA /* Pods_WellnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WellnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E2BEC12717FA5018C7ABA54 /* Pods_WellnessApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +88,14 @@
 				3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		5CAECCB662A1BFE73E82DA5C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA7D198C4FA4393505CAF1DA /* Pods_WellnessApp.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		83BA0E92A084296EB14C3F0D /* Pods */ = {
@@ -127,6 +138,7 @@
 				FBEEBA212083D089008849C6 /* WellnessApp */,
 				FBEEBA202083D089008849C6 /* Products */,
 				83BA0E92A084296EB14C3F0D /* Pods */,
+				5CAECCB662A1BFE73E82DA5C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -234,7 +246,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Ten Labs Ltd";
 				TargetAttributes = {
 					FBEEBA1E2083D089008849C6 = {
@@ -395,6 +407,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -402,6 +415,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -452,6 +466,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -459,6 +474,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -496,6 +512,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCQJN659LL;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/WellnessApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenlabs.thelondonwellnessapp;
@@ -514,6 +531,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCQJN659LL;
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "$(SRCROOT)/WellnessApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenlabs.thelondonwellnessapp;
