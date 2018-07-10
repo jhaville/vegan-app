@@ -71,5 +71,9 @@ extension ItemCoordinator: ItemDetailViewControllerDelegate {
     func didTapShowMeDirectionsButton(_ controller: ItemDetailViewController, with coordinates: [Double]) {
         mapService.showDirectionsWithGoogleMaps(to: coordinates)
     }
+
+    func viewDidAppearCalled(_ controller: ItemDetailViewController, viewModel: ItemViewModel) {
+        controller.updateLocation(with: viewModel)
+    }
 }
 
