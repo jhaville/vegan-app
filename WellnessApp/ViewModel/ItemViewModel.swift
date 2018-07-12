@@ -21,6 +21,7 @@ struct ItemViewModel {
   let websiteUrl: URL?
   let coordinates: [Double]
   let itemType: ItemType
+  let tags: [Tag]?
   var latitude: Double {
     return coordinates.safeElement(at: 0) ?? 0
   }
@@ -34,7 +35,7 @@ extension ItemViewModel {
     //mongodb = long, lat so reverse them to get 'google' order of lat, long
     let latitude = item.location?.coordinates.safeElement(at: 1) ?? 0
     let longitude = item.location?.coordinates.safeElement(at: 0) ?? 0
-    self.init(name: item.name, locationName: item.locationName ?? "", distanceDescription: item.distanceDescription, imageUrls: item.imageUrls, shortSummary: item.shortSummary, description: item.description, phoneNumber: item.phoneNumber ?? "", websiteUrl: item.websiteUrl, coordinates: [latitude, longitude], itemType: item.itemType)
+    self.init(name: item.name, locationName: item.locationName ?? "", distanceDescription: item.distanceDescription, imageUrls: item.imageUrls, shortSummary: item.shortSummary, description: item.description, phoneNumber: item.phoneNumber ?? "", websiteUrl: item.websiteUrl, coordinates: [latitude, longitude], itemType: item.itemType, tags: item.tags)
   }
 }
 

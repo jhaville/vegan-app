@@ -1,4 +1,5 @@
-import Foundation
+import UIKit
+
 struct Items: Decodable {
     let items: [Item]
 }
@@ -14,6 +15,7 @@ struct Item: Decodable {
   let websiteUrl: URL?
   let itemType: ItemType
   let distanceFrom: Double?
+  let tags: [Tag]?
 }
 
 struct Location: Decodable {
@@ -32,6 +34,29 @@ enum ItemType: String, Decodable {
       return "shops"
     }
   }
+}
+
+enum Tag: String, Decodable {
+    case vegan
+    case vegetarian
+
+    func toColor() -> UIColor {
+        switch self {
+        case .vegan:
+            return .brown
+        case .vegetarian:
+            return UIColor(red: 55/255, green: 206/255, blue: 140/255, alpha: 1)
+        }
+    }
+
+    func toShortName() -> String {
+        switch self {
+        case .vegan:
+            return "VGN"
+        case .vegetarian:
+            return "VEG"
+        }
+    }
 }
 
 extension Array {

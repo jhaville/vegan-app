@@ -1,24 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
-            <string>AvenirNext-Medium</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="250" id="KGk-i7-Jjw" userLabel="Item Cell" customClass="ItemCell" customModule="VeganApp" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="250" id="KGk-i7-Jjw" userLabel="Item Cell" customClass="ItemCell" customModule="WellnessApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="441" height="250"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
@@ -28,7 +22,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Izc-d8-F8D">
                         <rect key="frame" x="0.0" y="0.0" width="441" height="249.5"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant-background" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-WI-MVK" customClass="NetworkUIImageView" customModule="VeganApp" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="restaurant-background" translatesAutoresizingMaskIntoConstraints="NO" id="w0n-WI-MVK" customClass="NetworkUIImageView" customModule="WellnessApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="441" height="249.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
@@ -54,15 +48,24 @@
                                             <constraint firstAttribute="width" constant="12" id="kwk-jX-KEf"/>
                                         </constraints>
                                     </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NBn-NZ-Cic">
+                                        <rect key="frame" x="386" y="194.5" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="DQz-Ff-i0H"/>
+                                            <constraint firstAttribute="width" priority="999" constant="40" id="nQP-r6-5rU"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="NBn-NZ-Cic" secondAttribute="bottom" constant="15" id="00q-Ku-m9k"/>
                                     <constraint firstItem="LRe-gU-8id" firstAttribute="centerY" secondItem="b4u-sr-nue" secondAttribute="centerY" id="Pr7-cn-qaC"/>
                                     <constraint firstItem="F5m-6L-RaM" firstAttribute="top" secondItem="Tkb-iQ-XGA" secondAttribute="bottom" constant="5" id="YPC-cO-Oan"/>
                                     <constraint firstItem="F5m-6L-RaM" firstAttribute="leading" secondItem="b4u-sr-nue" secondAttribute="leading" constant="15" id="clO-Vk-p9J"/>
                                     <constraint firstItem="Tkb-iQ-XGA" firstAttribute="leading" secondItem="b4u-sr-nue" secondAttribute="leading" constant="15" id="otc-uA-lBL"/>
                                     <constraint firstAttribute="top" secondItem="Tkb-iQ-XGA" secondAttribute="top" constant="-16" id="vfd-eq-aex"/>
                                     <constraint firstAttribute="trailing" secondItem="LRe-gU-8id" secondAttribute="trailing" constant="15" id="xtf-U8-1ex"/>
+                                    <constraint firstAttribute="trailing" secondItem="NBn-NZ-Cic" secondAttribute="trailing" constant="15" id="zJO-i5-Fsu"/>
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="djG-KJ-lWr">
@@ -110,6 +113,7 @@
                 <outlet property="distanceLabel" destination="zXb-Bv-Zmr" id="La2-85-W56"/>
                 <outlet property="locationLabel" destination="F5m-6L-RaM" id="JgZ-CN-5rF"/>
                 <outlet property="nameLabel" destination="Tkb-iQ-XGA" id="Cfl-Is-b6x"/>
+                <outlet property="tagsStackView" destination="NBn-NZ-Cic" id="2cD-Ke-pOR"/>
             </connections>
             <point key="canvasLocation" x="122.5" y="184"/>
         </tableViewCell>
