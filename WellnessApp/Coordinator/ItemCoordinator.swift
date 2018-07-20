@@ -52,9 +52,9 @@ extension ItemCoordinator: ItemListControllerDelegate {
   func didSelect(_ viewController: ItemListController, itemViewModel: ItemViewModel) {
     let itemDetailController = UIViewController.load(ItemDetailViewController.self)
     itemDetailController.loadViewIfNeeded()
+    navigationController.pushViewController(itemDetailController, animated: true)
     itemDetailController.delegate = self
     itemDetailController.update(with: itemViewModel)
-    navigationController.pushViewController(itemDetailController, animated: true)
   }
   func didRefresh(_ viewController: ItemListController) {
     if let location = location {

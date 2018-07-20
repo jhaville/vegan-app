@@ -9,7 +9,7 @@ public enum BackendEnvironment: String {
         case .live:
             return "http://wellnessapp.tenlabs.io"
         case .development:
-            return "http://localhost:3000"
+            return "https://old-turtle-23.localtunnel.me"
         }
     }
 

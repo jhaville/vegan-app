@@ -211,8 +211,8 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUb-e4-TEi">
-                                <rect key="frame" x="15" y="35" width="53" height="28"/>
-                                <color key="backgroundColor" red="0.47058823529999999" green="0.90588235289999997" blue="0.69019607839999997" alpha="0.70261665239726023" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="15" y="40" width="53" height="28"/>
+                                <color key="backgroundColor" red="0.47058823529999999" green="0.90588235289999997" blue="0.69019607839999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                 <inset key="contentEdgeInsets" minX="8" minY="4" maxX="8" maxY="4"/>
                                 <state key="normal" title="Back"/>
@@ -239,7 +239,7 @@
                             <constraint firstItem="dHL-Lp-c7a" firstAttribute="leading" secondItem="RYu-xd-s7z" secondAttribute="leading" id="jId-ao-pk3"/>
                             <constraint firstItem="dHL-Lp-c7a" firstAttribute="top" secondItem="RYu-xd-s7z" secondAttribute="top" id="mSV-oR-5Wd"/>
                             <constraint firstItem="dHL-Lp-c7a" firstAttribute="trailing" secondItem="RYu-xd-s7z" secondAttribute="trailing" id="r89-MS-n6A"/>
-                            <constraint firstItem="iUb-e4-TEi" firstAttribute="top" secondItem="RYu-xd-s7z" secondAttribute="top" constant="35" id="vGO-kz-z25"/>
+                            <constraint firstItem="iUb-e4-TEi" firstAttribute="top" secondItem="RYu-xd-s7z" secondAttribute="top" constant="40" id="vGO-kz-z25"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1uh-g8-DQ8"/>
                     </view>
@@ -258,6 +258,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WVd-1t-57I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3132" y="-591.90404797601207"/>
+        </scene>
+        <!--Location Permission Denied View Controller-->
+        <scene sceneID="l2i-X9-Pex">
+            <objects>
+                <viewController storyboardIdentifier="LocationPermissionDeniedViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FwQ-gk-0lP" customClass="LocationPermissionDeniedViewController" customModule="WellnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qtU-rt-zo8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enable your location in settings so we can show you healthy restaurants and shops nearby!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gT-da-Hcv">
+                                <rect key="frame" x="20" y="278" width="335" height="72"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.1333333333" green="0.31764705879999999" blue="0.41960784309999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kfx-YW-l6g">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.73333333329999995" green="0.73333333329999995" blue="0.73333333329999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="74T-xt-RzN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Go to Device Settings">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedGoToDeviceSettings:" destination="FwQ-gk-0lP" eventType="touchUpInside" id="Xd7-vd-raP"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hbf-6b-VaV" firstAttribute="trailing" secondItem="8gT-da-Hcv" secondAttribute="trailing" constant="20" id="0oK-gb-Ows"/>
+                            <constraint firstItem="Kfx-YW-l6g" firstAttribute="leading" secondItem="Hbf-6b-VaV" secondAttribute="leading" id="2ZQ-lD-tfR"/>
+                            <constraint firstItem="8gT-da-Hcv" firstAttribute="centerY" secondItem="qtU-rt-zo8" secondAttribute="centerY" constant="-20" id="3Z0-Yv-hub"/>
+                            <constraint firstItem="Hbf-6b-VaV" firstAttribute="bottom" secondItem="Kfx-YW-l6g" secondAttribute="bottom" id="K2R-P7-aqh"/>
+                            <constraint firstItem="8gT-da-Hcv" firstAttribute="leading" secondItem="Hbf-6b-VaV" secondAttribute="leading" constant="20" id="mbe-Pr-zj5"/>
+                            <constraint firstItem="Hbf-6b-VaV" firstAttribute="trailing" secondItem="Kfx-YW-l6g" secondAttribute="trailing" id="zwf-LM-uTy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hbf-6b-VaV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E0A-KM-VeF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4637.6000000000004" y="-737.18140929535241"/>
         </scene>
     </scenes>
 </document>

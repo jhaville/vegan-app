@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3A2DBC4220C301B40022B892 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2DBC4120C301B40022B892 /* APIService.swift */; };
 		3A2DBC4420C301D60022B892 /* MapService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2DBC4320C301D60022B892 /* MapService.swift */; };
+		3A57779621012DE3001C57ED /* LocationPermissionDeniedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A57779521012DE3001C57ED /* LocationPermissionDeniedViewController.swift */; };
 		3AB085C120B4DD86005DA5E4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB085C020B4DD86005DA5E4 /* Resource.swift */; };
 		3AE5064220AB83C100546783 /* NetworkUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5064120AB83C100546783 /* NetworkUIImageView.swift */; };
 		3AFD6C3320E7C56200FDB005 /* BackendEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		3A2DBC4120C301B40022B892 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		3A2DBC4320C301D60022B892 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		3A57779521012DE3001C57ED /* LocationPermissionDeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionDeniedViewController.swift; sourceTree = "<group>"; };
 		3AB085C020B4DD86005DA5E4 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		3AE5064120AB83C100546783 /* NetworkUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUIImageView.swift; sourceTree = "<group>"; };
 		3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendEnvironment.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				FBEEBA3F2083E228008849C6 /* ItemListController.swift */,
 				FBEE3B25208D2F2800906358 /* ItemDetailViewController.swift */,
+				3A57779521012DE3001C57ED /* LocationPermissionDeniedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				FBEE3B21208B5A4F00906358 /* UITableView+Extensions.swift in Sources */,
 				FBEEBA3B2083DF10008849C6 /* TabBarCoordinator.swift in Sources */,
 				FBEE3B26208D2F2800906358 /* ItemDetailViewController.swift in Sources */,
+				3A57779621012DE3001C57ED /* LocationPermissionDeniedViewController.swift in Sources */,
 				FBEEBA3D2083E152008849C6 /* ItemCoordinator.swift in Sources */,
 				FBEEBA362083DB62008849C6 /* Item.swift in Sources */,
 			);

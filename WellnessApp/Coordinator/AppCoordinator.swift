@@ -27,4 +27,3 @@ final class AppCoordinator: NSObject, Coordinator {
     coordinators.append(tabBarCoordinator)
   }
 }
-

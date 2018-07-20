@@ -49,10 +49,10 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="NBn-NZ-Cic">
-                                        <rect key="frame" x="386" y="194.5" width="40" height="40"/>
+                                        <rect key="frame" x="426" y="194.5" width="0.0" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="DQz-Ff-i0H"/>
-                                            <constraint firstAttribute="width" priority="999" constant="40" id="nQP-r6-5rU"/>
+                                            <constraint firstAttribute="width" id="nQP-r6-5rU"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -114,6 +114,7 @@
                 <outlet property="locationLabel" destination="F5m-6L-RaM" id="JgZ-CN-5rF"/>
                 <outlet property="nameLabel" destination="Tkb-iQ-XGA" id="Cfl-Is-b6x"/>
                 <outlet property="tagsStackView" destination="NBn-NZ-Cic" id="2cD-Ke-pOR"/>
+                <outlet property="tagsStackViewWidthConstraint" destination="nQP-r6-5rU" id="qh4-DK-fAo"/>
             </connections>
             <point key="canvasLocation" x="122.5" y="184"/>
         </tableViewCell>

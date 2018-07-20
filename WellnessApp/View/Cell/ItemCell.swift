@@ -9,19 +9,34 @@ class ItemCell: UITableViewCell {
   @IBOutlet weak var locationLabel: UILabel!
   @IBOutlet weak var backgroundImageView: NetworkUIImageView!
   @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var tagsStackView: UIStackView!
-    func update(with itemViewModel: ItemViewModel) {
+  @IBOutlet weak var tagsStackView: UIStackView!
+  @IBOutlet weak var tagsStackViewWidthConstraint: NSLayoutConstraint!
+
+  func update(with itemViewModel: ItemViewModel) {
+    tagsStackView.isHidden = itemViewModel.tags == nil
     nameLabel.text = itemViewModel.name
     locationLabel.text = itemViewModel.locationName
     distanceLabel.text = itemViewModel.distanceDescription
     if let backgroundImageUrl = itemViewModel.imageUrls?.first {
       self.backgroundImageView.loadImage(from: backgroundImageUrl)
     }
+    tagsStackView.removeAllArrangedSubviews()
     itemViewModel.tags?.forEach {
         tagsStackView.addArrangedSubview(TagView(with: $0))
     }
-    tagsStackView.widthAnchor.constraint(equalToConstant: CGFloat((itemViewModel.tags?.count ?? 0) * 40 + 5)).isActive = true
+    let count = CGFloat(itemViewModel.tags?.count ?? 0)
+    tagsStackViewWidthConstraint.constant = calculateStackViewWidth(viewCount: count)
   }
+
+    private func calculateStackViewWidth(viewCount: CGFloat) -> CGFloat {
+        guard viewCount > 0 else { return 0 }
+        let viewWidth: CGFloat = 40
+        let spacing: CGFloat = 5
+        let totalViewWidths = viewWidth * viewCount
+        let totalSpacingWidth = spacing * (viewCount - CGFloat(1))
+        let total = totalViewWidths + totalSpacingWidth
+        return total
+    }
 }
 
 final class TagView: UIView {
@@ -57,4 +72,15 @@ final class TagView: UIView {
     label.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
     label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
   }
+}
+
+extension UIStackView {
+    func removeAllArrangedSubviews() {
+        arrangedSubviews.forEach {
+            removeArrangedSubview($0)
+        }
+        subviews.forEach {
+            $0.removeFromSuperview()
+        }
+    }
 }

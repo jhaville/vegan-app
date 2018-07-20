@@ -59,6 +59,7 @@ class ItemDetailViewController: UIViewController {
         super.viewDidAppear(animated)
         guard let viewModel = viewModel else { return }
         delegate?.viewDidAppearCalled(self, viewModel: viewModel)
+        navigationItem.setHidesBackButton(true, animated: false)
     }
     
     override func viewWillAppear(_ animated: Bool) {

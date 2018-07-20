@@ -48,6 +48,16 @@ final class TabBarCoordinator: NSObject, Coordinator {
     locationManager.distanceFilter = 100.0
     locationManager.delegate = self
   }
+
+  func showLocationPermissionSettingsScreen() {
+    let locationPermissionDeniedViewController = UIViewController.load(LocationPermissionDeniedViewController.self)
+    tabBarController.present(locationPermissionDeniedViewController, animated: true, completion: nil)
+  }
+  func removeLocationPermissionSettingsScreenIfNeeded() {
+    if tabBarController.presentedViewController != nil {
+        tabBarController.dismiss(animated: true, completion: nil)
+    }
+  }
 }
 
 extension TabBarCoordinator: UITabBarControllerDelegate {
@@ -69,10 +79,12 @@ extension TabBarCoordinator: CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        let alertViewController = UIAlertController(title: "We couldn't get your location! Please try again later", message: error.localizedDescription, preferredStyle: .alert)
+        tabBarController.present(alertViewController, animated: true, completion: nil)
     }
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        removeLocationPermissionSettingsScreenIfNeeded()
         switch status {
         case .notDetermined:
             manager.requestWhenInUseAuthorization()
@@ -85,6 +97,8 @@ extension TabBarCoordinator: CLLocationManagerDelegate {
         case .restricted:
             break
         case .denied:
+            userLocation = nil
+            showLocationPermissionSettingsScreen()
             break
         }
     }
