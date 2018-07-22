@@ -230,8 +230,8 @@
 				FBEEBA1B2083D089008849C6 /* Sources */,
 				FBEEBA1C2083D089008849C6 /* Frameworks */,
 				FBEEBA1D2083D089008849C6 /* Resources */,
-				92D6129A6A894F5074FD6306 /* [CP] Embed Pods Frameworks */,
 				9213EBB2C1636182CEA1AAD7 /* [CP] Copy Pods Resources */,
+				3A57781921050892001C57ED /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -291,6 +291,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3A57781921050892001C57ED /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" b02d7d73e28430bbb074672639c12a7b6d95c870 95813ca69f57b9a6c48315d558e5b4ad7626aea8f756067ac1f780e69613aebf";
+		};
 		83E1D55F841195B807F34ADB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,26 +338,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		92D6129A6A894F5074FD6306 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftLocation/SwiftLocation.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftLocation.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -51,8 +51,6 @@ class ItemDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        verticalScrollView.contentInsetAdjustmentBehavior = .never
-        verticalScrollView.contentInset = UIEdgeInsets(top: view.frame.width, left: 0, bottom: 0, right: 0)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -64,6 +62,8 @@ class ItemDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        verticalScrollView.contentInsetAdjustmentBehavior = .never
+        verticalScrollView.contentInset = UIEdgeInsets(top: view.frame.width, left: 0, bottom: 0, right: 0)
         navigationController?.navigationBar.isHidden = true
     }
     

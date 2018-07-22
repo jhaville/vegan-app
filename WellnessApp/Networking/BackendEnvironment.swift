@@ -7,9 +7,9 @@ public enum BackendEnvironment: String {
     func getBaseUrlString() -> String {
         switch self {
         case .live:
-            return "http://wellnessapp.tenlabs.io"
+            return "https://wellnessapp.tenlabs.io"
         case .development:
-            return "https://old-turtle-23.localtunnel.me"
+            return "https://afraid-wolverine-66.localtunnel.me"
         }
     }
 

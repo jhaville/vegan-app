@@ -1,28 +1,29 @@
 PODS:
+  - Crashlytics (3.10.3):
+    - Fabric (~> 1.7.8)
+  - Fabric (1.7.8)
   - GoogleMaps (2.7.0):
     - GoogleMaps/Maps (= 2.7.0)
   - GoogleMaps/Base (2.7.0)
   - GoogleMaps/Maps (2.7.0):
     - GoogleMaps/Base
-  - SwiftLocation (3.2.3):
-    - SwiftyJSON (~> 4.0.0-alpha.1)
-  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - GoogleMaps
-  - SwiftLocation (~> 3.2.3)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Crashlytics
+    - Fabric
     - GoogleMaps
-    - SwiftLocation
-    - SwiftyJSON
 
 SPEC CHECKSUMS:
+  Crashlytics: 2aea305161a2122492698c75af27f2b98aa49a25
+  Fabric: fba4684a95df789565b0b27fc5b6e68f1755af32
   GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
-  SwiftLocation: a3c3bc2023118171ef3572188a31def94aa0892c
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: fec7edd58e5d814811137d4ef685c6611b491aec
+PODFILE CHECKSUM: 7e9f934259d5e1f6e718ae231c9e00d30d425d55
 
 COCOAPODS: 1.5.2

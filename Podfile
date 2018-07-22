@@ -7,5 +7,6 @@ target 'WellnessApp' do
 
   # Pods for VeganApp
   pod 'GoogleMaps'
-  pod 'SwiftLocation', '~> 3.2.3'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

@@ -1,5 +1,7 @@
 import UIKit
 import GoogleMaps
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,8 +11,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-    GMSServices.provideAPIKey("AIzaSyC_25KzLLIViOOvkQR7mVlNA8qE05gim68")
-    
+    GMSServices.provideAPIKey("AIzaSyBkHiGTpLXHsluDgyPqeWRPIwO7jPNJ33I")
+    Fabric.with([Crashlytics.self])
+
     styleApp()
 
     window = UIWindow(frame: UIScreen.main.bounds)
@@ -25,6 +28,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
     UITabBar.appearance().tintColor = .black
     UITabBarItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont.systemFont(ofSize: 13)], for: .normal)
-  }
+  } 
 }
 
