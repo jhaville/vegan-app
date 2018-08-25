@@ -9,14 +9,25 @@ enum ViewState<A> {
 protocol ItemListControllerDelegate: class {
   func didSelect(_ viewController: ItemListController, itemViewModel: ItemViewModel)
   func didRefresh(_ viewController: ItemListController)
+  func didRequestMoreItems(_ viewController: ItemListController)
 }
 
 class ItemListController: UIViewController {
 
+  lazy var footerLoadingView: UIActivityIndicatorView = {
+    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    activityIndicatorView.startAnimating()
+    activityIndicatorView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+    activityIndicatorView.backgroundColor = .white
+    return activityIndicatorView
+  }()
+
+  
   var itemType: ItemType?
   private let itemListDataSource = ItemListDataSource()
   private let refreshControl = UIRefreshControl()
   weak var delegate: ItemListControllerDelegate?
+  
   @IBOutlet weak var errorView: UIView!
   @IBAction func retryButtonTapped(_ sender: Any) {
     delegate?.didRefresh(self)
@@ -30,8 +41,8 @@ class ItemListController: UIViewController {
       refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
       itemListDataSource.delegate = self
       tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier)
-      tableView.estimatedRowHeight = 66.0
-      tableView.rowHeight = UITableViewAutomaticDimension
+      tableView.register(UINib(nibName: "LoadingCell", bundle: nil), forCellReuseIdentifier: LoadingCell.cellIdentifier)
+      tableView.estimatedRowHeight = 250
       tableView.separatorStyle = .none
     }
   }
@@ -44,13 +55,17 @@ class ItemListController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
   }
-
+  
   @objc private func refresh() {
     refreshControl.beginRefreshing()
     delegate?.didRefresh(self)
   }
+
+  func clearLoadingFooter() {
+    tableView.tableFooterView = nil
+  }
   
-  func update(with viewState: ViewState<ItemsViewModel>) {
+  func update(with viewState: ViewState<ItemsViewModel>, indexPaths: [IndexPath] = []) {
     resetState()
     switch viewState {
     case .loading:
@@ -61,15 +76,23 @@ class ItemListController: UIViewController {
       if itemsViewModel.itemViewModels.isEmpty {
         showErrorState(with: nil, isEmpty: true)
       } else {
-        update(with: itemsViewModel)
+        update(with: itemsViewModel, indexPaths)
       }
     }
   }
-  private func update(with viewModel: ItemsViewModel) {
-    itemListDataSource.itemsViewModel = viewModel
-    tableView.reloadData()
-  }
 
+  private func update(with viewModel: ItemsViewModel, _ indexPaths: [IndexPath]) {
+
+    itemListDataSource.itemsViewModel = viewModel
+
+    tableView.tableFooterView = nil
+    if indexPaths.isEmpty {
+      tableView.reloadData()
+    } else {
+      tableView.insertRows(at: indexPaths, with: .none)
+    }
+  }
+  
   private func resetState() {
     refreshControl.endRefreshing()
     errorView.isHidden = true
@@ -92,10 +115,16 @@ class ItemListController: UIViewController {
   func showEmptyState() {
     errorViewLabel.text = "There are currently no " + (itemType ?? .restaurant).toCollectionName() + " near you, please check back later"
   }
+
 }
 
 extension ItemListController: ItemListDataSourceDelegate {
   func didSelect(_ dataSource: ItemListDataSource, itemViewModel: ItemViewModel) {
     delegate?.didSelect(self, itemViewModel: itemViewModel)
+  }
+
+  func didScrollToEnd(_ dataSource: ItemListDataSource) {
+    tableView.tableFooterView = footerLoadingView
+    delegate?.didRequestMoreItems(self)
   }
 }

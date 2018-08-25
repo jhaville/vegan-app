@@ -1,7 +1,8 @@
 import UIKit
 
 struct Items: Decodable {
-    let items: [Item]
+  let items: [Item]
+  let cursor: Int
 }
 
 struct Item: Decodable {
@@ -19,7 +20,7 @@ struct Item: Decodable {
 }
 
 struct Location: Decodable {
-    let coordinates: [Double]
+  let coordinates: [Double]
 }
 
 enum ItemType: String, Decodable {
@@ -37,31 +38,54 @@ enum ItemType: String, Decodable {
 }
 
 enum Tag: String, Decodable {
-    case vegan
-    case vegetarian
-
-    func toColor() -> UIColor {
-        switch self {
-        case .vegan:
-            return .brown
-        case .vegetarian:
-            return UIColor(red: 55/255, green: 206/255, blue: 140/255, alpha: 1)
-        }
+  case vegan
+  case vegetarian
+  
+  func toColor() -> UIColor {
+    switch self {
+    case .vegan:
+      return .brown
+    case .vegetarian:
+      return UIColor(red: 55/255, green: 206/255, blue: 140/255, alpha: 1)
     }
-
-    func toShortName() -> String {
-        switch self {
-        case .vegan:
-            return "VGN"
-        case .vegetarian:
-            return "VEG"
-        }
+  }
+  
+  func toShortName() -> String {
+    switch self {
+    case .vegan:
+      return "VGN"
+    case .vegetarian:
+      return "VEG"
     }
+  }
 }
 
 extension Array {
-    func safeElement(at index: Int) -> Element? {
-        if indices.contains(index) { return self[index] }
-        return nil
-    }
+  func safeElement(at index: Int) -> Element? {
+    if indices.contains(index) { return self[index] }
+    return nil
+  }
+}
+
+extension Item: Equatable {
+  static func ==(lhs: Item, rhs: Item) -> Bool {
+    return lhs.description == rhs.description &&
+      lhs.distanceDescription == rhs.distanceDescription &&
+      lhs.distanceFrom == rhs.distanceFrom &&
+      lhs.imageUrls == rhs.imageUrls &&
+      lhs.itemType == rhs.itemType &&
+      lhs.location == rhs.location &&
+      lhs.locationName == rhs.locationName &&
+      lhs.name == rhs.name &&
+      lhs.phoneNumber == rhs.phoneNumber &&
+      lhs.shortSummary == rhs.shortSummary &&
+      lhs.tags == rhs.tags &&
+      lhs.websiteUrl == rhs.websiteUrl
+  }
+}
+
+extension Location: Equatable {
+  static func ==(lhs: Location, rhs: Location) -> Bool {
+    return lhs.coordinates == rhs.coordinates
+  }
 }

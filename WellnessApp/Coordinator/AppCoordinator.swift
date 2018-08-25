@@ -21,7 +21,7 @@ final class AppCoordinator: NSObject, Coordinator {
   
   private func showTabs() {
     window.rootViewController = tabBarController
-
+    
     let tabBarCoordinator = TabBarCoordinator(tabBarController: tabBarController)
     tabBarCoordinator.start()
     coordinators.append(tabBarCoordinator)

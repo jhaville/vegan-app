@@ -1,4 +1,5 @@
 import Foundation
+import CoreLocation
 
 class APIService {
   func load<A>(resource: Resource<A>, completion: @escaping(Response<A>)) {
@@ -12,13 +13,13 @@ class APIService {
       } else {
         completion(NSError(domain: "NoDataError", code: (response as? HTTPURLResponse)?.statusCode ?? -1, userInfo: ["description": "no data"]), nil)
       }
-    }.resume()
+      }.resume()
   }
 
-  func urlRequest(path: String,
-                  urlParameters: [String: String],
-                  body: [String: Any?] = [:],
-                  restMethod: RestMethod = .get) -> URLRequest? {
+  private func urlRequest(path: String,
+                          urlParameters: [String: String],
+                          body: [String: Any?] = [:],
+                          restMethod: RestMethod = .get) -> URLRequest? {
 
     var urlComponents = URLComponents(string: BackendEnvironment.current().getBaseUrlString())
     urlComponents?.path = path
@@ -32,9 +33,14 @@ class APIService {
 
     return request
   }
+
+  func itemRequest(location: CLLocation, cursor: Int, numOfItems: Int, itemType: ItemType) -> URLRequest? {
+    return urlRequest(path: "/" + itemType.toCollectionName(), urlParameters:  ["lat": "\(location.coordinate.latitude)", "long": "\(location.coordinate.longitude)", "cursor": "\(cursor)", "num_of_items": "\(numOfItems)"])
+  }
+
 }
 
 enum RestMethod: String {
-    case get = "GET"
-    case post = "POST"
+  case get = "GET"
+  case post = "POST"
 }

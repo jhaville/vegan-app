@@ -40,10 +40,10 @@ extension ItemViewModel {
 }
 
 extension Item {
-    var distanceDescription: String {
-        guard let distanceFrom = distanceFrom else { return "" }
-        let roundingBehavior: NSDecimalNumberHandler = NSDecimalNumberHandler(roundingMode: .bankers, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
-        let roundedNumber = NSDecimalNumber(value: distanceFrom).rounding(accordingToBehavior: roundingBehavior)
-        return "\(roundedNumber) miles away"
-    }
+  var distanceDescription: String {
+    guard let distanceFrom = distanceFrom else { return "" }
+    let roundingBehavior: NSDecimalNumberHandler = NSDecimalNumberHandler(roundingMode: .bankers, scale: 2, raiseOnExactness: false, raiseOnOverflow: false, raiseOnUnderflow: false, raiseOnDivideByZero: false)
+    let roundedNumber = NSDecimalNumber(value: distanceFrom).rounding(accordingToBehavior: roundingBehavior)
+    return "\(roundedNumber) miles away"
+  }
 }   

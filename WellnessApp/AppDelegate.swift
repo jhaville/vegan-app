@@ -5,22 +5,22 @@ import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
   var window: UIWindow?
   private var appCoordinator: AppCoordinator?
-
+  
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+    
     GMSServices.provideAPIKey("AIzaSyBkHiGTpLXHsluDgyPqeWRPIwO7jPNJ33I")
     Fabric.with([Crashlytics.self])
-
+    
     styleApp()
-
+    
     window = UIWindow(frame: UIScreen.main.bounds)
     window?.makeKeyAndVisible()
     appCoordinator = AppCoordinator(window: window ?? UIWindow())
     appCoordinator?.start()
-  
+    
     return true
   }
   

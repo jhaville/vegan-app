@@ -13,7 +13,7 @@
 		3AB085C120B4DD86005DA5E4 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB085C020B4DD86005DA5E4 /* Resource.swift */; };
 		3AE5064220AB83C100546783 /* NetworkUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5064120AB83C100546783 /* NetworkUIImageView.swift */; };
 		3AFD6C3320E7C56200FDB005 /* BackendEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */; };
-		3E2BEC12717FA5018C7ABA54 /* Pods_WellnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA7D198C4FA4393505CAF1DA /* Pods_WellnessApp.framework */; };
+		D7AFC9CAB25D3C165EFEE035 /* Pods_WellnessApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC151943B2E08983C85EBE4D /* Pods_WellnessApp.framework */; };
 		FBEE3B1C208B4E3D00906358 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */; };
 		FBEE3B1F208B570D00906358 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */; };
 		FBEE3B21208B5A4F00906358 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */; };
@@ -33,16 +33,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A2DBC4120C301B40022B892 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		3A2DBC4320C301D60022B892 /* MapService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; };
+		215D5CE9F698A40FA7FE7B0B /* Pods-WellnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.debug.xcconfig"; sourceTree = "<group>"; };
+		3A2DBC4120C301B40022B892 /* APIService.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; tabWidth = 2; };
+		3A2DBC4320C301D60022B892 /* MapService.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; tabWidth = 2; };
+		3A40F7C1210E8079003087E4 /* WellnessApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WellnessApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A57779521012DE3001C57ED /* LocationPermissionDeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionDeniedViewController.swift; sourceTree = "<group>"; };
-		3AB085C020B4DD86005DA5E4 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		3AB085C020B4DD86005DA5E4 /* Resource.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3AE5064120AB83C100546783 /* NetworkUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUIImageView.swift; sourceTree = "<group>"; };
-		3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendEnvironment.swift; sourceTree = "<group>"; };
-		83C4E7FB57343BCF0EB686DB /* Pods-WellnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.release.xcconfig"; sourceTree = "<group>"; };
-		89BEE2FADB7296743C8A57AF /* Pods-WellnessApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.debug.xcconfig"; sourceTree = "<group>"; };
-		EA7D198C4FA4393505CAF1DA /* Pods_WellnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WellnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = BackendEnvironment.swift; sourceTree = "<group>"; tabWidth = 2; };
+		3D351A8878CA2A5180F6D392 /* Pods-WellnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.release.xcconfig"; sourceTree = "<group>"; };
+		EC151943B2E08983C85EBE4D /* Pods_WellnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WellnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBEE3B1B208B4E3D00906358 /* ItemViewModel.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FBEE3B1E208B570D00906358 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		FBEE3B20208B5A4F00906358 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
 		FBEE3B23208B928300906358 /* ItemListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListDataSource.swift; sourceTree = "<group>"; };
@@ -53,10 +54,10 @@
 		FBEEBA292083D089008849C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FBEEBA2C2083D089008849C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FBEEBA2E2083D089008849C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FBEEBA352083DB62008849C6 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		FBEEBA352083DB62008849C6 /* Item.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FBEEBA382083DC58008849C6 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		FBEEBA3A2083DF10008849C6 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
-		FBEEBA3C2083E152008849C6 /* ItemCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; };
+		FBEEBA3A2083DF10008849C6 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
+		FBEEBA3C2083E152008849C6 /* ItemCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FBEEBA3F2083E228008849C6 /* ItemListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListController.swift; sourceTree = "<group>"; };
 		FBEEBA472083F716008849C6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FBEEBA482083F716008849C6 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
@@ -67,13 +68,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E2BEC12717FA5018C7ABA54 /* Pods_WellnessApp.framework in Frameworks */,
+				D7AFC9CAB25D3C165EFEE035 /* Pods_WellnessApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06B24F9F502530476A2B6270 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				215D5CE9F698A40FA7FE7B0B /* Pods-WellnessApp.debug.xcconfig */,
+				3D351A8878CA2A5180F6D392 /* Pods-WellnessApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3A2DBC4020C301A30022B892 /* Service */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,21 +102,12 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		5CAECCB662A1BFE73E82DA5C /* Frameworks */ = {
+		C39BD3997C04FF8A1CD00AB6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EA7D198C4FA4393505CAF1DA /* Pods_WellnessApp.framework */,
+				EC151943B2E08983C85EBE4D /* Pods_WellnessApp.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		83BA0E92A084296EB14C3F0D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				89BEE2FADB7296743C8A57AF /* Pods-WellnessApp.debug.xcconfig */,
-				83C4E7FB57343BCF0EB686DB /* Pods-WellnessApp.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		FBEE3B1A208B4E1A00906358 /* ViewModel */ = {
@@ -137,10 +138,11 @@
 		FBEEBA162083D088008849C6 = {
 			isa = PBXGroup;
 			children = (
+				3A40F7C1210E8079003087E4 /* WellnessApp-Bridging-Header.h */,
 				FBEEBA212083D089008849C6 /* WellnessApp */,
 				FBEEBA202083D089008849C6 /* Products */,
-				83BA0E92A084296EB14C3F0D /* Pods */,
-				5CAECCB662A1BFE73E82DA5C /* Frameworks */,
+				06B24F9F502530476A2B6270 /* Pods */,
+				C39BD3997C04FF8A1CD00AB6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -226,12 +228,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FBEEBA312083D089008849C6 /* Build configuration list for PBXNativeTarget "WellnessApp" */;
 			buildPhases = (
-				83E1D55F841195B807F34ADB /* [CP] Check Pods Manifest.lock */,
+				3A83326E2806846D4E40EB14 /* [CP] Check Pods Manifest.lock */,
 				FBEEBA1B2083D089008849C6 /* Sources */,
 				FBEEBA1C2083D089008849C6 /* Frameworks */,
 				FBEEBA1D2083D089008849C6 /* Resources */,
-				9213EBB2C1636182CEA1AAD7 /* [CP] Copy Pods Resources */,
 				3A57781921050892001C57ED /* ShellScript */,
+				EBD3B884E2576DF1AA716129 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,7 +306,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Fabric/run\" b02d7d73e28430bbb074672639c12a7b6d95c870 95813ca69f57b9a6c48315d558e5b4ad7626aea8f756067ac1f780e69613aebf";
 		};
-		83E1D55F841195B807F34ADB /* [CP] Check Pods Manifest.lock */ = {
+		3A83326E2806846D4E40EB14 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -322,7 +324,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9213EBB2C1636182CEA1AAD7 /* [CP] Copy Pods Resources */ = {
+		EBD3B884E2576DF1AA716129 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -503,7 +505,7 @@
 		};
 		FBEEBA322083D089008849C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89BEE2FADB7296743C8A57AF /* Pods-WellnessApp.debug.xcconfig */;
+			baseConfigurationReference = 215D5CE9F698A40FA7FE7B0B /* Pods-WellnessApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -515,6 +517,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenlabs.thelondonwellnessapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WellnessApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -522,7 +525,7 @@
 		};
 		FBEEBA332083D089008849C6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83C4E7FB57343BCF0EB686DB /* Pods-WellnessApp.release.xcconfig */;
+			baseConfigurationReference = 3D351A8878CA2A5180F6D392 /* Pods-WellnessApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -534,6 +537,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tenlabs.thelondonwellnessapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/WellnessApp-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
