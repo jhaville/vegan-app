@@ -14,15 +14,6 @@ protocol ItemListControllerDelegate: class {
 
 class ItemListController: UIViewController {
 
-  lazy var footerLoadingView: UIActivityIndicatorView = {
-    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-    activityIndicatorView.startAnimating()
-    activityIndicatorView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
-    activityIndicatorView.backgroundColor = .white
-    return activityIndicatorView
-  }()
-
-  
   var itemType: ItemType?
   private let itemListDataSource = ItemListDataSource()
   private let refreshControl = UIRefreshControl()
@@ -41,7 +32,6 @@ class ItemListController: UIViewController {
       refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
       itemListDataSource.delegate = self
       tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier)
-      tableView.register(UINib(nibName: "LoadingCell", bundle: nil), forCellReuseIdentifier: LoadingCell.cellIdentifier)
       tableView.estimatedRowHeight = 250
       tableView.separatorStyle = .none
     }
@@ -65,7 +55,7 @@ class ItemListController: UIViewController {
     tableView.tableFooterView = nil
   }
   
-  func update(with viewState: ViewState<ItemsViewModel>, indexPaths: [IndexPath] = []) {
+  func update(with viewState: ViewState<ItemsViewModel>) {
     resetState()
     switch viewState {
     case .loading:
@@ -76,20 +66,20 @@ class ItemListController: UIViewController {
       if itemsViewModel.itemViewModels.isEmpty {
         showErrorState(with: nil, isEmpty: true)
       } else {
-        update(with: itemsViewModel, indexPaths)
+        update(with: itemsViewModel)
       }
     }
   }
 
-  private func update(with viewModel: ItemsViewModel, _ indexPaths: [IndexPath]) {
+  private func update(with viewModel: ItemsViewModel) {
 
     itemListDataSource.itemsViewModel = viewModel
 
-    tableView.tableFooterView = nil
-    if indexPaths.isEmpty {
+    if viewModel.isFromFirstRequest {
       tableView.reloadData()
     } else {
-      tableView.insertRows(at: indexPaths, with: .none)
+      tableView.insertRows(at: viewModel.indexPathsToAdd, with: .fade)
+      tableView.tableFooterView?.isHidden = true
     }
   }
   
@@ -116,6 +106,14 @@ class ItemListController: UIViewController {
     errorViewLabel.text = "There are currently no " + (itemType ?? .restaurant).toCollectionName() + " near you, please check back later"
   }
 
+  private func footerLoadingView() -> UIActivityIndicatorView {
+    let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+    activityIndicatorView.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+    activityIndicatorView.backgroundColor = .white
+    activityIndicatorView.startAnimating()
+    return activityIndicatorView
+  }
+
 }
 
 extension ItemListController: ItemListDataSourceDelegate {
@@ -124,7 +122,8 @@ extension ItemListController: ItemListDataSourceDelegate {
   }
 
   func didScrollToEnd(_ dataSource: ItemListDataSource) {
-    tableView.tableFooterView = footerLoadingView
+    tableView.tableFooterView?.isHidden = false
+    tableView.tableFooterView = footerLoadingView()
     delegate?.didRequestMoreItems(self)
   }
 }

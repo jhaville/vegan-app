@@ -27,12 +27,11 @@ extension ItemListDataSource: UITableViewDataSource {
 }
 
 extension ItemListDataSource: UIScrollViewDelegate {
-  func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-    print("-- \(scrollView.contentOffset.y)")
-    print("--- \(scrollView.contentSize.height)")
-
-    if scrollView.contentOffset.y + (scrollView.frame.size.height * 1.2) > scrollView.contentSize.height {
-      delegate?.didScrollToEnd(self)
+  func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    if scrollView.contentOffset.y + scrollView.frame.size.height + 44 > scrollView.contentSize.height {
+      if itemsViewModel?.hasMore == true {
+        delegate?.didScrollToEnd(self)
+      }
     }
   }
 }

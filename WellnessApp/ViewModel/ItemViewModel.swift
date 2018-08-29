@@ -2,11 +2,14 @@ import Foundation
 
 struct ItemsViewModel {
   let itemViewModels: [ItemViewModel]
+  let hasMore: Bool
+  let indexPathsToAdd: [IndexPath]
+  let isFromFirstRequest: Bool
 }
 
 extension ItemsViewModel {
-  init(with items: [Item]) {
-    self.init(itemViewModels: items.map(ItemViewModel.init))
+  init(with items: [Item], hasMore: Bool, indexPathsToAdd: [IndexPath] = [], isFromFirstRequest: Bool) {
+    self.init(itemViewModels: items.map(ItemViewModel.init), hasMore: hasMore, indexPathsToAdd: indexPathsToAdd, isFromFirstRequest: isFromFirstRequest)
   }
 }
 

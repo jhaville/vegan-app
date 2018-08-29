@@ -14,6 +14,7 @@ final class ItemCoordinator: Coordinator {
   private let numOfItemsPerRequest = 10
   private var currentItems = [Item]()
   weak var delegate: ItemListControllerDelegate?
+  private var isLoading = false
 
   init(navigationController: UINavigationController, itemType: ItemType) {
     self.navigationController = navigationController
@@ -24,6 +25,9 @@ final class ItemCoordinator: Coordinator {
   
   func update(with location: CLLocation) {
     self.location = location
+
+    guard !isLoading else { return }
+    isLoading = true
     
     guard let urlRequest = apiService.itemRequest(location: location, cursor: cursor, numOfItems: numOfItemsPerRequest, itemType: itemType) else {
       return
@@ -31,7 +35,8 @@ final class ItemCoordinator: Coordinator {
 
     apiService.load(resource: Resource<Items>(urlRequest: urlRequest)) { (error, response) in
       self.cursor = response?.cursor ?? 0
-      self.handleItemResponse(error, response?.items)
+      self.handleItemResponse(error, response?.items, response?.hasMoreFlag)
+      self.isLoading = false
     }
   }
   
@@ -43,21 +48,20 @@ final class ItemCoordinator: Coordinator {
     navigationController.viewControllers = [itemListController]
   }
   
-  private func handleItemResponse(_ error: Error?, _ items: [Item]?) {
+  private func handleItemResponse(_ error: Error?, _ items: [Item]?, _ hasMore: Bool?) {
     DispatchQueue.main.async {
       if error != nil { self.itemListController.update(with: ViewState.error(error)) }
       if let items = items {
         let allItems = self.currentItems + items
-        guard self.currentItems != allItems else {
+        if self.currentItems == allItems && !allItems.isEmpty {
           self.itemListController.clearLoadingFooter()
           return
         }
         let initialItemCount = self.currentItems.count
         self.currentItems = allItems
-        let itemsViewModel = ItemsViewModel(with: allItems)
-        let newIndexPaths = items.enumerated().map { IndexPath(row: initialItemCount + $0.offset, section: 0) }
-        let isInitialData = self.currentItems.count == self.numOfItemsPerRequest
-        self.itemListController.update(with: ViewState.data(itemsViewModel), indexPaths: isInitialData ? [] : newIndexPaths)
+        let indexPathToAdd = items.enumerated().map { IndexPath(row: initialItemCount + $0.offset, section: 0) }
+        let itemsViewModel = ItemsViewModel(with: allItems, hasMore: hasMore ?? false, indexPathsToAdd: indexPathToAdd, isFromFirstRequest: self.currentItems.count <= self.numOfItemsPerRequest)
+        self.itemListController.update(with: ViewState.data(itemsViewModel))
       }
     }
   }

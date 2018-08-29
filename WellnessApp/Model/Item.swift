@@ -3,6 +3,13 @@ import UIKit
 struct Items: Decodable {
   let items: [Item]
   let cursor: Int
+  let hasMore: Int
+}
+
+extension Items {
+  var hasMoreFlag: Bool {
+    return hasMore == 1
+  }
 }
 
 struct Item: Decodable {
