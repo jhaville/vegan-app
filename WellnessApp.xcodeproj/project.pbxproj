@@ -38,7 +38,7 @@
 		3A2DBC4320C301D60022B892 /* MapService.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = MapService.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3A57779521012DE3001C57ED /* LocationPermissionDeniedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPermissionDeniedViewController.swift; sourceTree = "<group>"; };
 		3AB085C020B4DD86005DA5E4 /* Resource.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; tabWidth = 2; };
-		3AE5064120AB83C100546783 /* NetworkUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkUIImageView.swift; sourceTree = "<group>"; };
+		3AE5064120AB83C100546783 /* NetworkUIImageView.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = NetworkUIImageView.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3AFD6C3220E7C56200FDB005 /* BackendEnvironment.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = BackendEnvironment.swift; sourceTree = "<group>"; tabWidth = 2; };
 		3D351A8878CA2A5180F6D392 /* Pods-WellnessApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WellnessApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WellnessApp/Pods-WellnessApp.release.xcconfig"; sourceTree = "<group>"; };
 		EC151943B2E08983C85EBE4D /* Pods_WellnessApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WellnessApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,7 +58,7 @@
 		FBEEBA3A2083DF10008849C6 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FBEEBA3C2083E152008849C6 /* ItemCoordinator.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ItemCoordinator.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FBEEBA3F2083E228008849C6 /* ItemListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListController.swift; sourceTree = "<group>"; };
-		FBEEBA472083F716008849C6 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		FBEEBA472083F716008849C6 /* ItemCell.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; tabWidth = 2; };
 		FBEEBA482083F716008849C6 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -517,7 +517,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -537,7 +537,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

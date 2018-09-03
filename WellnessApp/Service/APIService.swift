@@ -11,6 +11,7 @@ class APIService {
       if let data = data, let result = resource.parse(data) {
         completion(nil, result)
       } else {
+        //TODO: handle errors properly
         completion(NSError(domain: "NoDataError", code: (response as? HTTPURLResponse)?.statusCode ?? -1, userInfo: ["description": "no data"]), nil)
       }
       }.resume()
