@@ -16,7 +16,8 @@ enum BackendEnvironment: String {
   static func current() -> BackendEnvironment {
     #if Release
       return .live
+    #else
+      return .development
     #endif
-    return .development
   }
 }

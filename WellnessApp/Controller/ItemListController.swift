@@ -34,6 +34,7 @@ class ItemListController: UIViewController {
       tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: ItemCell.cellIdentifier)
       tableView.estimatedRowHeight = 250
       tableView.separatorStyle = .none
+      tableView.contentInsetAdjustmentBehavior = .never
     }
   }
   
